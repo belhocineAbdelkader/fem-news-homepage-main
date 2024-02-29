@@ -1,0 +1,48 @@
+@use "../abstracts" as *;
+
+/* Spacing */
+
+$padding: (p, px, px-s, px-e, py, py-s, py-e);
+$margin: (m, mx, mx-s, mx-e, my, my-s, my-e);
+@layer spacing {
+    // .w-full{
+    //     width: 100%;
+    // }
+    .gap {
+        gap: var(--local-gap, --main-gutter);
+    }
+    /* Padding */
+    @each $key in $padding {
+        .#{$key} {
+            padding: var(--#{$key}, var(--main-pad, 1rem));
+        }
+    }
+    @each $media in $mq-list {
+        @include mq($media) {
+            /* Padding */
+            @each $key in $padding {
+                .#{$media}-#{$key} {
+                    padding: var(--#{$media}-#{$key}, var(--main-pad, 1rem));
+                }
+            }
+        }
+    }
+
+    /* Margin*/
+    @each $key in $margin {
+        .#{$key} {
+            margin: var(--#{$key}, var(--main-margin, 1rem));
+        }
+    }
+
+    @each $media in $mq-list {
+        @include mq($media) {
+            /* Padding */
+            @each $key in $margin {
+                .#{$media}-#{$key} {
+                    margin: var(--#{$media}-#{$key}, var(--main-margin, 1rem));
+                }
+            }
+        }
+    }
+}

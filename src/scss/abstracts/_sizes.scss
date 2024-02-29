@@ -1,0 +1,93 @@
+// Font Sizes
+// Additional Sizes (Adjust as needed)
+$size-12-5: 0.125rem;
+$size-15: 0.15rem;
+$size-17-5: 0.175rem;
+$size-30: 0.3rem;
+$size-40: 0.4rem;
+$size-60: 0.6rem;
+$size-70: 0.7rem;
+$size-80: 0.8rem;
+$size-90: 0.9rem;
+$size-25: 0.25rem;
+$size-50: 0.5rem;
+$size-75: 0.75rem;
+$size-100: 1rem;
+$size-125: 1.25rem;
+$size-150: 1.5rem;
+$size-175: 1.75rem;
+$size-200: 2rem;
+$size-225: 2.25rem;
+$size-250: 2.5rem;
+$size-275: 2.75rem;
+$size-300: 3rem;
+$size-325: 3.25rem;
+$size-350: 3.5rem;
+$size-375: 3.75rem;
+$size-400: 4rem;
+$size-425: 4.25rem;
+$size-450: 4.5rem;
+$size-475: 4.75rem;
+$size-500: 5rem;
+$size-525: 5.25rem;
+$size-550: 5.5rem;
+$size-575: 5.75rem;
+$size-600: 6rem;
+$size-625: 6.25rem;
+$size-650: 6.5rem;
+$size-675: 6.75rem;
+$size-700: 7rem;
+$size-725: 7.25rem;
+$size-750: 7.5rem;
+$size-775: 7.75rem;
+$size-800: 8rem;
+$size-825: 8.25rem;
+$size-850: 8.5rem;
+$size-875: 8.75rem;
+$size-900: 9rem;
+$size-925: 9.25rem;
+$size-950: 9.5rem;
+$size-975: 9.75rem;
+$size-1000: 10rem;
+
+$main-gap: $size-100;
+$main-gutter: clamp(1rem, calc(0.93rem + 0.33vw), 1.25rem);
+$icon-size: $size-100;
+
+// border radius
+$radius-main: $size-25;
+$radius-round: 50%;
+
+// btn
+$btn-padding: 0.5rem 1rem;
+$radius-btn: $size-25;
+
+// header
+$header-min-height: $size-400;
+$header-padding: 0 1rem;
+
+// navigation
+$nav-padding: 0 1rem;
+
+// footer
+$footer-min-height: $size-400;
+$footer-padding: 0 1rem;
+
+// form
+$form-padding: 0 1rem;
+$form-border-radius: $radius-main;
+$form-margin-inline: auto;
+$form-margin-block: $size-200;
+//form label
+
+// form input
+$input-min-height: unset;
+$input-padding: 0.5rem 1rem;
+
+// form placeholder
+
+// scrollbar
+
+$scrollbar-height: 0.72rem;
+$scrollbar-width: 0.75rem;
+$scrollbar-radius: 1000000000rem;

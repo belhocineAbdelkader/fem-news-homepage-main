@@ -1,0 +1,17 @@
+@use "../abstracts" as *;
+
+@layer show-d-m {
+    .only-desktop {
+        display: none !important;
+    }
+
+    @include mq(md) {
+        .only-desktop {
+            display: inherit !important;
+        }
+
+        .only-mobile {
+            display: none !important;
+        }
+    }
+}

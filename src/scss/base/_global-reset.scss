@@ -1,0 +1,284 @@
+@use "../abstracts" as *;
+
+@layer General-style {
+    *,
+    *::before,
+    *::after {
+        box-sizing: border-box;
+    }
+
+    /* Remove default margin and padding */
+    * {
+        margin: 0;
+        padding: 0;
+        font: inherit;
+    }
+
+    /* Set core root defaults */
+    html {
+        color-scheme: dark;
+        scroll-behavior: smooth;
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+        html:focus-within {
+            scroll-behavior: auto;
+        }
+    }
+
+    /* Set core body defaults */
+    body {
+        min-height: 100vh;
+        min-height: 100dvh;
+        height: 100%;
+        background-color: var(--body-clr-bg);
+        color: var(--body-clr-text);
+        font: var(--body-font);
+        letter-spacing: var(--body-letter-spacing);
+        text-rendering: optimizeLegibility;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0.2);
+        -moz-tap-highlight-color: rgba(0, 0, 0, 0.2);
+        -webkit-text-size-adjust: 100%;
+        -moz-text-size-adjust: 100%;
+        text-size-adjust: 100%;
+        tab-size: 4;
+    }
+
+    /* Heading styles */
+    h1,
+    .h1,
+    h2,
+    .h2,
+    h3,
+    .h3,
+    h4,
+    .h4,
+    h5,
+    .h5,
+    h6,
+    .h6 {
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+        text-wrap: balance;
+        letter-spacing: var(--h-letter-spacing);
+    }
+
+    h1,
+    .h1 {
+        font: var(--h1-font);
+    }
+
+    h2,
+    .h2 {
+        font: var(--h2-font);
+    }
+
+    h3,
+    .h3 {
+        font: var(--h3-font);
+    }
+
+    h4,
+    .h4 {
+        font: var(--h4-font);
+    }
+
+    h5,
+    .h5 {
+        font: var(--h5-font);
+    }
+
+    h6,
+    .h6 {
+        font: var(--h6-font);
+    }
+
+    /* basic style for the p element*/
+
+    p {
+        margin-block: 2rem 1rem;
+        text-align: start;
+    }
+
+    /* Font for non inherited font element*/
+
+    input,
+    button,
+    textarea,
+    select {
+        font: inherit;
+    }
+
+    /* Basic styles for images */
+    img,
+    svg,
+    video,
+    picture,
+    figure {
+        max-width: 100%;
+        display: block;
+    }
+
+    /* Remove list styles on ul, ol elements with a list role */
+    ul[role="list"],
+    ol[role="list"] {
+        list-style-type: none;
+    }
+
+    /* Global styles */
+
+    /* Basic styles for anchor */
+
+    /* A anchor that don't have a class get default styles */
+    a:not([class]) {
+        text-decoration-skip-ink: auto;
+        color: currentColor;
+    }
+
+    a {
+        font-weight: 500;
+        text-decoration: inherit;
+    }
+    /* Unvisited links */
+    a:link {
+        color: var(--link-clr-text);
+    }
+    /* Visited links */
+    a:visited {
+        color: var(--link-clr-visited);
+    }
+    /* Hovered links */
+    a:hover {
+        background: var(--link-clr-hover);
+        text-decoration: var(--link-text-decoration-hover);
+    }
+    a:hover[class] {
+        background: transparent;
+        text-decoration: inherit;
+    }
+    /* Active links */
+    a:active {
+        color: var(--link-clr-active);
+    }
+
+    /* Basic styles for form element */
+    label {
+        display: inline-block;
+    }
+    /*  remove the default increase and decrease buttons from an <input> with type="number" */
+    input[type="number"] {
+        -moz-appearance: textfield;
+        -webkit-appearance: textfield;
+        appearance: textfield;
+    }
+
+    input[type="number"]::-webkit-inner-spin-button,
+    input[type="number"]::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        margin: 0;
+    }
+
+    /* Clears the ‘X’ from Internet Explorer */
+    [type="search"]:where(:-ms-clear, ::-ms-reveal) {
+        display: none;
+        height: 0;
+        width: 0;
+    }
+
+    /* Clears the ‘X’ from Chrome */
+    [type="search"]:where(
+            ::-webkit-search-decoration,
+            ::-webkit-search-cancel-button,
+            ::-webkit-search-results-button,
+            ::-webkit-search-results-decoration
+        ) {
+        display: none;
+    }
+
+    /* Clears the ‘padding’ from datetime */
+    ::-webkit-datetime-edit-fields-wrapper,
+    ::-webkit-datetime-edit-text,
+    ::-webkit-datetime-edit-minute,
+    ::-webkit-datetime-edit-hour-field,
+    ::-webkit-datetime-edit-day-field,
+    ::-webkit-datetime-edit-month-field,
+    ::-webkit-datetime-edit-year-field {
+        padding: 0;
+    }
+
+    /* Focus state */
+    :where(a, button, input, textarea, summary):focus {
+        --outline-size: var(--outline-site-size);
+        --outline-style: var(--outline-site-style);
+        --outline-color: var(--outline-clr-site);
+    }
+    /* Base :focus styles for fallback purposes */
+    :where(a, button, input, textarea, summary):focus {
+        outline: var(--outline-size) var(--outline-style) var(--outline-color);
+        outline-offset: var(--outline-offset, var(--outline-size));
+    }
+
+    /* Remove base :focus styles when :focus-visible is available */
+    :where(a, button, input, textarea):focus:not(:focus-visible) {
+        outline: none;
+    }
+
+    /* Final :focus-visible styles */
+    :where(a, button, input, textarea):focus-visible {
+        outline: var(--outline-size) var(--outline-style) var(--outline-color);
+        outline-offset: var(--outline-offset, var(--outline-size));
+    }
+
+    /* selection */
+    ::selection {
+        background: var(--selection-clr-bg);
+        color: var(--selection-clr-text);
+    }
+
+    /* scrollbar */
+    ::-webkit-scrollbar {
+        height: var(--scrollbar-height);
+        width: var(--scrollbar-width);
+    }
+    ::-webkit-scrollbar-track {
+        background-color: var(--scrollbar-clr-track-bg);
+        margin-block: 0.5rem;
+        border-radius: var(--scrollbar-border-radius);
+    }
+    ::-webkit-scrollbar-thumb {
+        background-color: var(--scrollbar-clr-thumb-bg);
+        border-radius: var(--scrollbar-border-radius);
+        border: 2px solid var(--scrollbar-clr-track-bg);
+    }
+    ::-webkit-scrollbar-thumb:hover {
+        background-color: var(--scrollbar-clr-thumb-bg-hover);
+    }
+    /* Hide scrollbar buttons in Webkit browsers (Chrome, Safari) */
+    ::-webkit-scrollbar-button {
+        display: none;
+    }
+    /* styles for scrollbar  in Firefox browsers (Firefox) */
+    @supports (
+        scrollbar-color: var(--scrollbar-clr-thumb-bg)
+            var(--scrollbar-clr-track-bg)
+    ) {
+        * {
+            scrollbar-color: var(--scrollbar-clr-thumb-bg)
+                var(--scrollbar-clr-track-bg);
+            scrollbar-width: thin;
+        }
+    }
+    /* Remove animations, transitions, and smooth scroll for reduced motion preference */
+    @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+            animation-duration: 0.01ms !important;
+            animation-iteration-count: 1 !important;
+            transition-duration: 0.01ms !important;
+            scroll-behavior: auto !important;
+        }
+    }
+}

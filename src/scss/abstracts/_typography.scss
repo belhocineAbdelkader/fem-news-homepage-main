@@ -1,0 +1,117 @@
+// -----------------------------------------------------------------------------
+// This file contains Vars that are specific for typography.
+// -----------------------------------------------------------------------------
+
+/// map Font Sizes
+$fs-100: 60%;
+$fs-200: 80%;
+$fs-300: clamp(0.94rem, calc(0.92rem + 0.08vw), 0.98rem);
+$fs-400: clamp(1.13rem, calc(1.06rem + 0.33vw), 1.31rem);
+$fs-500: clamp(1.35rem, calc(1.21rem + 0.69vw), 1.75rem);
+$fs-600: clamp(1.62rem, calc(1.37rem + 1.24vw), 2.33rem);
+$fs-700: clamp(1.94rem, calc(1.54rem + 2.03vw), 3.11rem);
+$fs-800: clamp(2.33rem, calc(1.7rem + 3.15vw), 4.14rem);
+$fs-900: clamp(2.8rem, calc(1.85rem + 4.74vw), 5.52rem);
+
+// font weight
+$fw-100: 100 !default;
+$fw-200: 200 !default;
+$fw-300: 300 !default;
+$fw-400: 400 !default;
+$fw-500: 500 !default;
+$fw-600: 600 !default;
+$fw-700: 700 !default;
+$fw-800: 800 !default;
+$fw-900: 900 !default;
+
+// font family
+
+$ff-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !default;
+$ff-sans-serif-2: "Segoe UI", Roboto, Helvetica, Arial, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !default;
+$ff-serif: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua",
+    Georgia, serif !default;
+$ff-monospace: "SF Mono", SFMono-Regular, Consolas, "Liberation Mono", Menlo,
+    Courier, monospace !default;
+$ff-comic: "Comic Sans MS", cursive, sans-serif !default;
+$ff-dyslexic: OpenDyslexic, sans-serif !default;
+
+/// body font
+$body-ff: $ff-sans-serif-2;
+$body-fs: var(--fs-400) !default;
+$body-fw: var(--fw-400) !default;
+$body-line-height: 1.75 !default;
+$body-letter-spacing: 0.2px !default;
+
+/// heading font
+$h-ff: $ff-sans-serif-2 !default;
+$h-line-height: 1.2 !default;
+$h-letter-spacing: 0.031rem !default;
+// heading font size
+$h1-fs: var(--fs-800) !default;
+$h2-fs: var(--fs-700) !default;
+$h3-fs: var(--fs-600) !default;
+$h4-fs: var(--fs-500) !default;
+$h5-fs: var(--fs-400) !default;
+$h6-fs: var(--fs-400) !default;
+// heading font weight
+$h1-fw: var(--fw-800) !default;
+$h2-fw: var(--fw-700) !default;
+$h3-fw: var(--fw-600) !default;
+$h4-fw: var(--fw-500) !default;
+$h5-fw: var(--fw-500) !default;
+$h6-fw: var(--fw-500) !default;
+
+// other fonts s
+
+$large: var(--fs-900);
+$small: var(--fs-300);
+$smaller: 80%;
+$x-small: 60%;
+
+// form
+
+// form label
+$label-fw: $body-fw;
+$label-fs: $body-fs;
+$label-ff: $body-ff;
+$label-line-height: $body-line-height;
+$label-letter-spacing: $body-letter-spacing;
+
+// form input
+$input-ff: $body-ff;
+$input-fw: $body-fw;
+$input-fs: $body-fs;
+$input-line-height: $body-line-height;
+$input-letter-spacing: $body-letter-spacing;
+
+// form placeholder
+$placeholder-ff: $input-ff;
+$placeholder-fs: $input-fs;
+$placeholder-fw: $input-fw;
+$placeholder-line-height: $input-line-height;
+$placeholder-letter-spacing: $input-letter-spacing;
+
+// -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji","Segoe UI Emoji", "Segoe UI Symbol"
+// 1. **`-apple-system`**: On Apple devices (macOS, iOS), this typically resolves to the San Francisco font.
+
+// 2. **`BlinkMacSystemFont`**: This is a CSS property that is specific to Blink-based browsers (like Chrome). It instructs the browser to use the system font on macOS.
+
+// 3. **`"Segoe UI"`**: If the user is on a Windows system, it will use the Segoe UI font.
+
+// 4. **`Roboto`**: This is a font developed by Google and is commonly used on Android devices.
+
+// 5. **`Helvetica`**: If none of the above fonts are available, it will attempt to use Helvetica.
+
+// 6. **`Arial`**: If Helvetica is not available, it will try to use Arial.
+
+// 7. **`sans-serif`**: A generic fallback font in case none of the specified fonts are available.
+
+// 8. **`"Apple Color Emoji"`**: This is specific to Apple devices and provides support for color emoji.
+
+// 9. **`"Segoe UI Emoji"`**: Used for emoji on Windows systems.
+
+// 10. **`"Segoe UI Symbol"`**: Used for symbols on Windows systems.
+
+// The browser will go through this list from left to right and use the first available font on the user's system. This helps ensure a consistent look across different platforms while also providing fallback options in case a specific font is not available.

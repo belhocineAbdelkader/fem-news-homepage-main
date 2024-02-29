@@ -1,0 +1,83 @@
+//
+// this file contains everything related to the
+// default them.
+//
+
+@use "../abstracts" as *;
+@use "sass:color";
+@use "sass:meta";
+@use "sass:map";
+
+@mixin makeVars($map) {
+    @each $subMap, $valueList in $map {
+        $title: $subMap;
+        $subMap: map.get($color-vars, $subMap);
+
+        @each $key, $value in $subMap {
+            --#{$title}-#{$prefix}-#{$key}: #{$value};
+        }
+    }
+}
+
+@mixin createColorVars($dark-mode: $enable-dark-mode) {
+    @if $dark-mode {
+        @layer light-theme {
+            :root,
+            :root.light {
+                font-palette: light; /* https://developer.mozilla.org/en-US/docs/Web/CSS/font-palette#examples */
+                color-scheme: light;
+                @include makeVars($color-vars);
+            }
+            @media (prefers-color-scheme: light) {
+                :root:not(.light):not(.dark) {
+                    color-scheme: light;
+                    font-palette: light;
+                    @include makeVars($color-vars);
+                }
+            }
+        }
+
+        @layer dark-theme {
+            .light {
+                font-palette: dark; /* https://developer.mozilla.org/en-US/docs/Web/CSS/font-palette#examples */
+                color-scheme: dark;
+                @include makeVars($color-dark-vars);
+            }
+            @media (prefers-color-scheme: dark) {
+                :root:not(.light):not(.dark) {
+                    color-scheme: dark;
+                    font-palette: dark;
+                    @include makeVars($color-dark-vars);
+                }
+            }
+        }
+    } @else {
+        @layer light-theme {
+            .light {
+                font-palette: light; /* https://developer.mozilla.org/en-US/docs/Web/CSS/font-palette#examples */
+                color-scheme: light;
+                @include makeVars($color-vars);
+            }
+            @media (prefers-color-scheme: light) {
+                :root:not(.light):not(.dark) {
+                    color-scheme: light;
+                    font-palette: light;
+                    @include makeVars($color-vars);
+                }
+            }
+        }
+    }
+}
+@include createColorVars();
+// @layer light-theme {
+//     .light {
+//         font-palette: light; /* https://developer.mozilla.org/en-US/docs/Web/CSS/font-palette#examples */
+//         color-scheme: light;
+//     }
+//     @media (prefers-color-scheme: light) {
+//         :root:not(.light):not(.dark) {
+//             color-scheme: light;
+//             font-palette: light;
+//         }
+//     }
+// }

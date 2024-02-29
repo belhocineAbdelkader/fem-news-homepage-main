@@ -1,0 +1,16 @@
+@use "../abstracts" as *;
+@use "sass:map";
+/* fonts */
+@layer font-util {
+    /*font family*/
+    .ff-base {
+        font-family: var(--ff-base);
+    }
+    .ff-heading {
+        font-family: var(--ff-base);
+    }
+    .ff-accent {
+        font-family: var(--ff-accent);
+    }
+    /* Font sizes */
+}

@@ -1,0 +1,28 @@
+@charset "UTF-8";
+
+// 1.  and
+@use "layers/layers";
+
+// 2. Base stuff and Configuration and reset
+
+@use "layers/base-layer";
+
+// 4. Components
+@use "layers/components-layer";
+
+// 5. Layout-related sections
+@use "layers/layout-layer";
+
+// 6. Page-specific styles
+@use "layers/pages-layer";
+
+// tailwind
+
+@use "layers/tailwind-layer";
+
+// 3.  helpers classes
+@use "layers/utilities-layer";
+
+// 7. Themes
+
+@use "layers/themes-layer";

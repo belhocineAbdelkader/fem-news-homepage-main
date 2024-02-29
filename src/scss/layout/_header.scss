@@ -1,0 +1,36 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the header of the site/application.
+// -----------------------------------------------------------------------------
+
+@use "../abstracts" as *;
+
+@layer header {
+    .primary-header {
+        padding-block: 0.8rem;
+        background-color: var(--site-header-clr-bg);
+        color: var(--site-header-clr-text);
+    }
+    .primary-header_wrapper {
+        display: flex;
+        justify-content: space-between;
+
+        &_action {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+        }
+
+        &_content {
+            display: flex;
+            justify-content: space-between;
+        }
+        &_content_nav {
+            display: flex;
+            align-items: center;
+            ul {
+                display: flex;
+                gap: var(--gap, 1rem);
+            }
+        }
+    }
+}

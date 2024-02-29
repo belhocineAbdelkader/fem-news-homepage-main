@@ -1,0 +1,17 @@
+//  -----------------------------------------------------------------------------
+// this file contains everything related to the
+//  default them.
+//  -----------------------------------------------------------------------------
+
+@layer dark-theme {
+    .dark {
+        font-palette: dark; /* https://developer.mozilla.org/en-US/docs/Web/CSS/font-palette#examples */
+        color-scheme: dark;
+    }
+    @media (prefers-color-scheme: dark) {
+        :root:not(.light):not(.dark) {
+            color-scheme: dark;
+            font-palette: dark;
+        }
+    }
+}

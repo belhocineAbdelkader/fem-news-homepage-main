@@ -1,0 +1,34 @@
+@layer general-util {
+    .call-action {
+        padding: 1rem;
+        background: hsl(0 0% 100% / 0.15);
+        border: var(--main-border);
+    }
+
+    .flow > * + * {
+        margin-top: var(--flow-spacer, 1em);
+    }
+
+    .main-border {
+        border: var(--main-border);
+    }
+
+    .round {
+        border-radius: 50%;
+        aspect-ratio: 1 / 1;
+    }
+
+    // flex
+
+    .flex-group {
+        display: flex;
+        flex-wrap: wrap;
+        column-gap: var(--flex-column-gap, 2rem);
+        row-gap: var(--flex-row-gap, calc(--flex-group-gap / 2));
+        width: fit-content;
+    }
+
+    .flex-group.mx-auto {
+        justify-content: center;
+    }
+}

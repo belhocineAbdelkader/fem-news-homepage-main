@@ -1,0 +1,232 @@
+$prefix: "clr";
+$enable-dark-mode: false;
+// default light
+
+$color-vars: (
+    text: (
+        default: var(),
+        interactive-default: var(),
+        interactive-hover: var(),
+        interactive-active: var(),
+        interactive-visited: var(),
+    ),
+    bg: (
+        default: var(),
+        primary: var(),
+        secondary: var(),
+        accent: var(),
+        neutral: var(),
+        error: var(),
+        warning: var(),
+        success: var(),
+        info: var(),
+        disabled: var(),
+        transparent: var(),
+    ),
+    body: (
+        text: var(),
+        bg: var(),
+    ),
+    outline: (
+        site: var(--clr-yellow-base),
+        // site: -webkit-focus-ring-color,
+        // site: highlight,
+    ),
+    link: (
+        text: var(--text-interactive-default),
+        hover: var(--text-interactive-hover),
+        active: var(--text-interactive-active),
+        visited: var(--text-interactive-visited),
+    ),
+    border: (
+        default: var(),
+        primary: var(),
+        secondary: var(),
+        accent: var(),
+        error: var(),
+        warning: var(),
+        success: var(),
+        info: var(),
+        disabled: var(),
+    ),
+    btn: (
+        primary: color-neutral-100,
+        primary-bg: color-primary-700,
+        primary-hover: color-neutral-100,
+        primary-bg-hover: color-primary-800,
+        accent: color-neutral-100,
+        accent-bg: color-accent-400,
+        accent-hover: color-neutral-100,
+        accent-bg-hover: color-accent-500,
+    ),
+    box-shadow: (
+        1: 0px 6px 5px rgb(0, 0, 0, 0.012) 0px 22px 18px rgb(0, 0, 0, 0.018) 0px
+            100px 80px rgb(0, 0, 0, 0.03),
+        2: 0px 6px 5px rgb(0, 0, 0, 0.016) 0px 22px 18px rgb(0, 0, 0, 0.024) 0px
+            100px 80px rgb(0, 0, 0, 0.04),
+        3: 0px 6px 5px rgb(0, 0, 0, 0.02) 0px 22px 18px rgb(0, 0, 0, 0.03) 0px
+            100px 80px rgb(0, 0, 0, 0.05),
+        4: 0px 6px 5px rgb(0, 0, 0, 0.03) 0px 22px 18px rgb(0, 0, 0, 0.042) 0px
+            100px 80px rgb(0, 0, 0, 0.07),
+        5: 0px 6px 5px rgb(0, 0, 0, 0.04) 0px 22px 18px rgb(0, 0, 0, 0.06) 0px
+            100px 80px rgb(0, 0, 0, 0.1),
+    ),
+    site-header: (
+        bg: var(--clr-accent-300),
+        text: var(--clr-neutral-black),
+    ),
+    header-nav: (
+        link: site-header-color,
+        link-hover: color-primary-300,
+        link-active: var(),
+        link-visited: var(),
+    ),
+    site-footer: (
+        text: color-primary-900,
+        bg: color-primary-300,
+        link: color-neutral-100,
+        link-hover: color-primary-200,
+        link-active: color-primary-200,
+        link-visited: color-primary-200,
+    ),
+    form-label: (
+        text: body-text-color,
+    ),
+    form-input: (
+        text: body-text-color,
+        bg: color-neutral-100,
+        border-default: 3px solid color-primary-200,
+        border-focus: 3px solid color-primary-400,
+    ),
+    form-placeholder: (
+        form-placeholder-color: color-primary-300,
+    ),
+    form-invalid: (
+        text: #ff97a0,
+        focus: #ff707f,
+        focus-effect: rgba(255, 112, 127, 0.2),
+    ),
+    selection: (
+        text: var(--clr-yellow-base),
+        bg: var(--clr-neutral-black),
+    ),
+    scrollbar: (
+        bg: transparent,
+        color: hsla(0, 0%, 100%, 0.25),
+        track-bg: var(--clr-neutral-black),
+        thumb-bg: var(--clr-yellow-base),
+        thumb-bg-hover: var(--clr-accent-200),
+    ),
+);
+
+// dark theme
+$color-dark-vars: (
+    text: (
+        default: var(),
+        interactive-default: var(),
+        interactive-hover: var(),
+        interactive-active: var(),
+        interactive-visited: var(),
+    ),
+    bg: (
+        default: var(),
+        primary: var(),
+        secondary: var(),
+        accent: var(),
+        neutral: var(),
+        error: var(),
+        warning: var(),
+        success: var(),
+        info: var(),
+        disabled: var(),
+        transparent: var(),
+    ),
+    body: (
+        body-text: var(),
+        body-bg: var(),
+    ),
+    link: (
+        text: var(--text-interactive-default),
+        hover: var(--text-interactive-hover),
+        active: var(--text-interactive-active),
+        visited: var(--text-interactive-visited),
+    ),
+    border: (
+        default: var(),
+        primary: var(),
+        secondary: var(),
+        accent: var(),
+        error: var(),
+        warning: var(),
+        success: var(),
+        info: var(),
+        disabled: var(),
+    ),
+    btn: (
+        primary: color-neutral-100,
+        primary-bg: color-primary-700,
+        primary-hover: color-neutral-100,
+        primary-bg-hover: color-primary-800,
+        accent: color-neutral-100,
+        accent-bg: color-accent-400,
+        accent-hover: color-neutral-100,
+        accent-bg-hover: color-accent-500,
+    ),
+    box-shadow: (
+        1: 0px 6px 5px rgb(0, 0, 0, 0.012) 0px 22px 18px rgb(0, 0, 0, 0.018) 0px
+            100px 80px rgb(0, 0, 0, 0.03),
+        2: 0px 6px 5px rgb(0, 0, 0, 0.016) 0px 22px 18px rgb(0, 0, 0, 0.024) 0px
+            100px 80px rgb(0, 0, 0, 0.04),
+        3: 0px 6px 5px rgb(0, 0, 0, 0.02) 0px 22px 18px rgb(0, 0, 0, 0.03) 0px
+            100px 80px rgb(0, 0, 0, 0.05),
+        4: 0px 6px 5px rgb(0, 0, 0, 0.03) 0px 22px 18px rgb(0, 0, 0, 0.042) 0px
+            100px 80px rgb(0, 0, 0, 0.07),
+        5: 0px 6px 5px rgb(0, 0, 0, 0.04) 0px 22px 18px rgb(0, 0, 0, 0.06) 0px
+            100px 80px rgb(0, 0, 0, 0.1),
+    ),
+    site-header: (
+        bg: var(--clr-accent-300),
+        text: var(--clr-neutral-black),
+    ),
+    header-nav: (
+        link: site-header-color,
+        link-hover: color-primary-300,
+        link-active: var(),
+        link-visited: var(),
+    ),
+    site-footer: (
+        text: color-primary-900,
+        bg: color-primary-300,
+        link: color-neutral-100,
+        link-hover: color-primary-200,
+        link-active: color-primary-200,
+        link-visited: color-primary-200,
+    ),
+    form-label: (
+        text: body-text-color,
+    ),
+    form-input: (
+        text: body-text-color,
+        bg: color-neutral-100,
+        border-default: 3px solid color-primary-200,
+        border-focus: 3px solid color-primary-400,
+    ),
+    form-placeholder: (
+        form-placeholder-color: color-primary-300,
+    ),
+    form-invalid: (
+        text: #ff97a0,
+        focus: #ff707f,
+        focus-effect: rgba(255, 112, 127, 0.2),
+    ),
+    selection: (
+        text: var(),
+        bg: var(),
+    ),
+    scrollbar: (
+        bg: transparent,
+        color: hsla(0, 0%, 100%, 0.25),
+        track-bg: var(),
+        thumb-bg: var(),
+    ),
+);

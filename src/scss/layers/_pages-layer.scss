@@ -1,0 +1,5 @@
+@use "sass:meta";
+
+@layer pages {
+    @include meta.load-css("../pages/_home.scss");
+}

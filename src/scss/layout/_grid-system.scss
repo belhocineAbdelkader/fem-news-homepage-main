@@ -1,0 +1,156 @@
+@use "sass:math";
+@use "../abstracts" as *;
+
+@layer grid-system {
+    @layer container {
+        /*! container */
+        @each $screen-size, $value in $container-width {
+            @if $screen-size == sm or $screen-size == xs {
+                .container,
+                .container-fixed {
+                    // max-width: 1440px;
+                    width: #{$value};
+                    margin-inline: auto;
+                    padding-inline: var(--container-padding, --main-gutter);
+                }
+            } @else {
+                @include mq($screen-size) {
+                    .container {
+                        max-width: #{$value};
+                    }
+                }
+            }
+        }
+
+        /*! content-grid */
+        .content-grid {
+            --padding-inline: 1rem;
+            --content-max-width: 900px;
+            --breakout-max-width: 1200px;
+
+            --breakout-size: calc(
+                (var(--breakout-max-width) - var(--content-max-width)) / 2
+            );
+
+            display: grid;
+            grid-template-columns:
+                [full-width-start] minmax(var(--padding-inline), 1fr)
+                [breakout-start] minmax(0, var(--breakout-size))
+                [content-start] min(
+                    100% - (var(--padding-inline) * 2),
+                    var(--content-max-width)
+                )
+                [content-end]
+                minmax(0, var(--breakout-size)) [breakout-end]
+                minmax(var(--padding-inline), 1fr) [full-width-end];
+        }
+
+        .content-grid > :not(.breakout, .full-width),
+        .full-width > :not(.breakout, .full-width) {
+            grid-column: content;
+        }
+
+        .content-grid > .breakout {
+            grid-column: breakout;
+        }
+
+        .content-grid > .full-width {
+            grid-column: full-width;
+
+            // display: grid;
+            // grid-template-columns: inherit;
+        }
+
+        img.full-width {
+            width: 100%;
+            max-height: 45vh;
+            object-fit: cover;
+        }
+    }
+
+    @layer even-cols {
+        .even-columns {
+            display: grid;
+            gap: var(--grid-gap, $main-gap);
+            @include mq(md) {
+                grid-auto-flow: column;
+                grid-auto-columns: 1fr;
+            }
+        }
+    }
+
+    @layer main-layout {
+        // for sidebar and main
+        .main-layout {
+            display: grid;
+            grid-template-columns: fit-content(--sidebar-max-width) minmax(
+                    min(50vw, 30ch),
+                    1fr
+                );
+        }
+    }
+
+    @layer grid-auto-fit {
+        // Create an intrinsically responsive grid layout, optionally using a CSS custom property to extend to variable contexts. Each column will resize at the same rate, and items will begin to break to a new row if the width reaches the --min value.
+        .grid-auto-fit {
+            --min: 15ch;
+            --gap: 1rem;
+            display: grid;
+            gap: var(--grid-gap, 1rem);
+            grid-template-columns: repeat(
+                auto-fit,
+                minmax(min(100%, var(--min)), 1fr)
+            );
+        }
+    }
+
+    @layer flex-auto-fit {
+        // Create an intrinsically responsive grid layout, optionally using a CSS custom property to extend to variable contexts. Each column will resize at the same rate until reaching the --min width. At that point, the last item will break to a new row and fill any available space.
+        .flex-auto-fit {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+
+            & > * {
+                flex: 1 1 var(--min);
+            }
+        }
+    }
+
+    @layer cluster {
+        .cluster {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto;
+            gap: var(--cluster-gap, var(--main-gap, 1rem));
+        }
+        .cluster > * {
+            margin: 0.2rem;
+        }
+        .cluster[data-star="start"] {
+            justify-content: flex-start;
+            margin-inline-start: 0;
+            margin-inline-end: auto;
+        }
+
+        .cluster[data-end="end"] {
+            align-items: flex-end;
+            margin-inline-end: 0;
+            margin-inline-start: auto;
+        }
+    }
+
+    @layer grid-stack {
+        .stack {
+            display: grid;
+            grid-template-areas: "stack";
+            place-content: center;
+
+            > * {
+                grid-area: stack;
+            }
+        }
+    }
+}

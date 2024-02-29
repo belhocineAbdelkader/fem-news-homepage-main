@@ -1,0 +1,42 @@
+@layer visibility {
+    .hidden {
+        visibility: hidden;
+        display: none;
+    }
+    /* Visibility Hidden */
+    .v-hidden {
+        visibility: hidden;
+    }
+
+    /* Visibility Visible */
+    .v-visible {
+        visibility: visible;
+    }
+
+    /** Hide element while making it readable for screen readers */
+    .only-sr:not(:focus):not(:active) {
+        clip: rect(0 0 0 0) !important;
+        clip-path: inset(100%) !important;
+        height: 1px !important;
+        width: 1px !important;
+        opacity: 0 !important;
+        overflow: hidden !important;
+        position: absolute !important;
+        white-space: nowrap !important;
+    }
+
+    /** Hide element while making it readable for screen readers and when focus with keyboard*/
+
+    .sr-only-focusable:focus,
+    .sr-only-focusable:active {
+        clip: auto !important;
+        -webkit-clip-path: none !important;
+        clip-path: none !important;
+        height: auto !important;
+        margin: auto !important;
+        overflow: visible !important;
+        position: static !important;
+        width: auto !important;
+        white-space: normal !important;
+    }
+}
