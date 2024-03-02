@@ -6,9 +6,6 @@
 
 // typography fontSizes
 $fs: (
-    100: $fs-100,
-    200: $fs-200,
-    300: $fs-300,
     400: $fs-400,
     500: $fs-500,
     600: $fs-600,
@@ -17,31 +14,16 @@ $fs: (
     900: $fs-900,
 );
 $fw: (
-    100: $fw-100,
-    200: $fw-200,
-    300: $fw-300,
     400: $fw-400,
-    500: $fw-500,
-    600: $fw-600,
     700: $fw-700,
-    800: $fw-800,
-    900: $fw-900,
+    800: $fw-800
 );
 $font-sizes: (
-    large: $large,
     h1: $h1-fs,
     h2: $h2-fs,
     h3: $h3-fs,
     h4: $h4-fs,
-    h5: $h5-fs,
-    h6: $h6-fs,
-    body: $body-fs,
-    label: $label-fs,
-    input: $input-fs,
-    placeholder: $placeholder-fs,
-    small: $small,
-    smaller: $smaller,
-    x-small: $x-small,
+    body: $body-fs
 ) !default;
 
 $font-weights: (
@@ -49,12 +31,7 @@ $font-weights: (
     h2: $h2-fw,
     h3: $h3-fw,
     h4: $h4-fw,
-    h5: $h5-fw,
-    h6: $h6-fw,
-    body: $body-fw,
-    label: $label-fw,
-    input: $input-fw,
-    placeholder: $placeholder-fw,
+    body: $body-fw
 ) !default;
 
 // body
@@ -62,7 +39,7 @@ $body: (
     line-height: #{$body-line-height},
     letter-spacing: #{$body-letter-spacing},
     ff: #{$body-ff},
-    font: var(--fw-body) var(--fs-body) / var(--body-line-height) var(--body-ff),
+    font: var(--fw-body) var(--fs-body) / var(--body-line-height) var(--body-ff)
 ) !default;
 
 // headings
@@ -73,23 +50,20 @@ $heading: (
     1-font: var(--fw-h1) var(--fs-h1) / var(--h-line-height) var(--h-ff),
     2-font: var(--fw-h2) var(--fs-h2) / var(--h-line-height) var(--h-ff),
     3-font: var(--fw-h3) var(--fs-h3) / var(--h-line-height) var(--h-ff),
-    4-font: var(--fw-h4) var(--fs-h4) / var(--h-line-height) var(--h-ff),
-    5-font: var(--fw-h5) var(--fs-h5) / var(--h-line-height) var(--h-ff),
-    6-font: var(--fw-h6) var(--fs-h5) / var(--h-line-height) var(--h-ff)
+    4-font: var(--fw-h4) var(--fs-h4) / var(--h-line-height) var(--h-ff)
 ) !default;
 
 $outline: (
     site-size: max(2px, 0.08em),
-    site-style: solid,
+    site-style: solid
 );
 
 $link: (
     text-decoration: none,
-    text-decoration-hover: none,
+    text-decoration-hover: none
 );
 $border-radius: (
-    main: $radius-main,
-    circle: $radius-round,
+    main: $radius-main
 ) !default;
 
 $btn: (
@@ -97,13 +71,13 @@ $btn: (
     text-transform: uppercase,
     padding: $btn-padding,
     border: 0,
-    border-radius: $radius-btn,
+    border-radius: $radius-btn
 ) !default;
 
 $site-header: (
     padding: $header-padding,
     margin: 0,
-    min-height: $header-min-height,
+    min-height: $header-min-height
 ) !default;
 
 $main-nav: (
@@ -111,216 +85,29 @@ $main-nav: (
     margin: 0,
     gap: $main-gap,
     link-text-decoration: none,
-    font-family: var(--body-ff),
+    font-family: var(--body-ff)
 ) !default;
 
-$site-footer: (
-    padding: $footer-padding,
-    margin: 0,
-    min-height: $footer-min-height,
-    link-font: var(--body-ff),
-    link-text-decoration: none,
-) !default;
-
-$card: (
-    card-flow-spacing: unset,
-    card-padding: size-8,
-    card-shadow: box-shadow-1,
-    card-border-radius: border-radius-2,
-    card-background-default: color-primary-100,
-    card-color-default: body-text-color,
-    card-font-family: body-font-family,
-    card-line-height: 1.25,
-    card-heading-color-default: card-color-default,
-    card-heading-font-size: font-size-600,
+$side: (
+    title-fs: var(--fs-, 2.3rem),
+    sub-title-fs: var(--fs-, 1.1rem),
+    p-fs: var(--fs-body)
 );
-
-$form: (
-    // form
-    form-padding: $form-padding,
-    form-margin-inline: $form-margin-inline,
-    form-margin-block: $form-margin-block,
-    form-border-radius: $radius-btn,
-    form-group-spacing: 0.5rem,
-
-    //form label
-    label-ff: $label-ff,
-    label-line-height: $label-line-height,
-    label-letter-spacing: $label-letter-spacing,
-    label-font: var(--label-fw) var(--label-fs) / var(--label-line-height)
-        var(--label-ff),
-    // form input
-    input-f-family: $body-ff,
-    input-line-height: $body-line-height,
-    input-letter-spacing: $body-letter-spacing,
-    input-font: var(--input-fw) var(--input-fs) / var(--input-line-height)
-        var(--input-ff),
-    input-border-radius: $radius-btn,
-    input-min-height: $input-min-height,
-    input-padding: $input-padding,
-
-    // form placeholder
-    placeholder-ff: $body-ff,
-    placeholder-line-height: $body-line-height,
-    placeholder-letter-spacing: $body-letter-spacing,
-    placeholder-font: var(--placeholder-fw) var(--placeholder-fs) /
-        var(--placeholder-line-height) var(--placeholder-ff)
-) !default;
+$card: (
+    num-fs: 2rem,
+    heading-font-size: var(--h4-font)
+);
 
 // scrollbar
 
 $scrollbar: (
     height: $scrollbar-height,
     width: $scrollbar-width,
-    border-radius: $scrollbar-radius,
+    border-radius: $scrollbar-radius
 );
 
 $container-width: (
     sm: 100%,
-    md: 738px,
-    lg: 962px,
+    md: 100%,
+    lg: 1024px
 ) !default;
-
-$transition: (
-    1: 0.3s,
-    2: 0.5s,
-);
-
-$root: (
-    fs: (
-        large: $fs-900,
-        h1: $h1-fs,
-        h2: $h2-fs,
-        h3: $h3-fs,
-        h4: $h4-fs,
-        h5: $h5-fs,
-        h6: $h6-fs,
-        body: $body-fs,
-        label: $label-fs,
-        input: $input-fs,
-        placeholder: $placeholder-fs,
-        small: $fs-300,
-        smaller: 80%,
-        x-small: 60%,
-    ),
-    fw: (
-        h1: $h1-fw,
-        h2: $h2-fw,
-        h3: $h3-fw,
-        h4: $h4-fw,
-        h5: $h5-fw,
-        h6: $h6-fw,
-        body: $body-fw,
-        label: $label-fw,
-        input: $input-fw,
-        placeholder: $placeholder-fw,
-    ),
-    // body
-    body:
-        (
-            line-height: #{$body-line-height},
-            letter-spacing: #{$body-letter-spacing},
-            ff: #{$body-ff},
-            font: var(--fw-body) var(--fs-body) / var(--body-line-height)
-                var(--body-ff),
-        ),
-    // headings
-    h:
-        (
-            -line-height: #{$h-line-height},
-            -letter-spacing: #{$h-letter-spacing},
-            -ff: #{$h-ff},
-            1-font: var(--fw-h1) var(--fs-h1) / var(--h-line-height) var(--h-ff),
-            2-font: var(--fw-h2) var(--fs-h2) / var(--h-line-height) var(--h-ff),
-            3-font: var(--fw-h3) var(--fs-h3) / var(--h-line-height) var(--h-ff),
-            4-font: var(--fw-h4) var(--fs-h4) / var(--h-line-height) var(--h-ff),
-            5-font: var(--fw-h5) var(--fs-h5) / var(--h-line-height) var(--h-ff),
-            6-font: var(--fw-h6) var(--fs-h5) / var(--h-line-height) var(--h-ff),
-        ),
-    border-radius: (
-        main: $radius-main,
-        circle: $radius-round,
-    ),
-    btn: (
-        font: var(--body-ff),
-        text-transform: uppercase,
-        padding: $btn-padding,
-        border: 0,
-        border-radius: $radius-btn,
-    ),
-    site-header: (
-        padding: $header-padding,
-        margin: 0,
-        min-height: $header-min-height,
-    ),
-    main-nav: (
-        padding: $nav-padding,
-        margin: 0,
-        gap: $main-gap,
-        link-text-decoration: none,
-        font-family: var(--body-ff),
-    ),
-    site-footer: (
-        padding: $footer-padding,
-        margin: 0,
-        min-height: $footer-min-height,
-        link-font: var(--body-ff),
-        link-text-decoration: none,
-    ),
-    card: (
-        card-flow-spacing: unset,
-        card-padding: size-8,
-        card-shadow: box-shadow-1,
-        card-border-radius: border-radius-2,
-        card-background-default: color-primary-100,
-        card-color-default: body-text-color,
-        card-font-family: body-font-family,
-        card-line-height: 1.25,
-        card-heading-color-default: card-color-default,
-        card-heading-font-size: font-size-600,
-    ),
-    form: (
-        // form
-        form-padding: $form-padding,
-        form-margin-inline: $form-margin-inline,
-        form-margin-block: $form-margin-block,
-        form-border-radius: $radius-btn,
-        form-group-spacing: 0.5rem,
-
-        //form label
-        label-ff: $label-ff,
-        label-line-height: $label-line-height,
-        label-letter-spacing: $label-letter-spacing,
-        label-font: var(--label-fw) var(--label-fs) / var(--label-line-height)
-            var(--label-ff),
-        // form input
-        input-f-family: $body-ff,
-        input-line-height: $body-line-height,
-        input-letter-spacing: $body-letter-spacing,
-        input-font: var(--input-fw) var(--input-fs) / var(--input-line-height)
-            var(--input-ff),
-        input-border-radius: $radius-btn,
-        input-min-height: $input-min-height,
-        input-padding: $input-padding,
-
-        // form placeholder
-        placeholder-ff: $body-ff,
-        placeholder-line-height: $body-line-height,
-        placeholder-letter-spacing: $body-letter-spacing,
-        placeholder-font: var(--placeholder-fw) var(--placeholder-fs) /
-            var(--placeholder-line-height) var(--placeholder-ff),
-    ),
-    scrollbar: (
-        height: 0.72rem,
-    ),
-    container-width: (
-        sm: 100%,
-        md: 738px,
-        lg: 962px,
-        container-min-margin-inline: auto,
-    ),
-    transition: (
-        1: 0.3s,
-        2: 0.5s,
-    ),
-);

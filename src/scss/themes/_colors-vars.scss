@@ -14,7 +14,7 @@
     /* Check if the browser supports display-p3 color space */
     @supports (color: color(display-p3 1 1 1)) {
         :root {
-            @each $palette, $colorName in $palettes-p3 {
+            @each $palette, $colorName in $palettes-type2 {
                 @each $key, $value in $colorName {
                     $keyName: "--clr-" + $palette + "-" + $key;
                     #{$keyName}: #{$value};
@@ -22,8 +22,4 @@
             }
         }
     }
-
-    /* Styles for devices supporting Display-P3 */
-    // @supports (color-gamut: p3) {
-    // }
 }

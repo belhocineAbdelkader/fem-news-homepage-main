@@ -1,11 +1,12 @@
 @use "../abstracts" as *;
 
-@layer show-d-m {
+@layer control-display {
     .only-desktop {
         display: none !important;
     }
 
-    @include mq(md) {
+
+    @media screen and (min-width: 768px) {
         .only-desktop {
             display: inherit !important;
         }
@@ -14,4 +15,5 @@
             display: none !important;
         }
     }
+
 }

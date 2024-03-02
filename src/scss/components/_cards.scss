@@ -1,2 +1,14 @@
-@layer cards {
+@layer card {
+  .card {
+    display: flex;
+    gap: 1rem;
+  }
+  .card-num {
+    color: var(--card-clr-title-num);
+    font-size: var(--card-num-fs);
+    font-weight: bold;
+  }
+  h4 {
+    margin-block: 1rem;
+  }
 }

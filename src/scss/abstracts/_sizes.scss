@@ -50,13 +50,12 @@ $size-950: 9.5rem;
 $size-975: 9.75rem;
 $size-1000: 10rem;
 
-$main-gap: $size-100;
-$main-gutter: clamp(1rem, calc(0.93rem + 0.33vw), 1.25rem);
-$icon-size: $size-100;
+$main-gap: 1rem;
+$main-gutter: 1rem;
+$icon-size: 1rem;
 
 // border radius
-$radius-main: $size-25;
-$radius-round: 50%;
+$radius-main: 0;
 
 // btn
 $btn-padding: 0.5rem 1rem;
@@ -68,23 +67,6 @@ $header-padding: 0 1rem;
 
 // navigation
 $nav-padding: 0 1rem;
-
-// footer
-$footer-min-height: $size-400;
-$footer-padding: 0 1rem;
-
-// form
-$form-padding: 0 1rem;
-$form-border-radius: $radius-main;
-$form-margin-inline: auto;
-$form-margin-block: $size-200;
-//form label
-
-// form input
-$input-min-height: unset;
-$input-padding: 0.5rem 1rem;
-
-// form placeholder
 
 // scrollbar
 

@@ -5,6 +5,8 @@
         "module": "ESNext",
         "lib": ["ES2020", "DOM", "DOM.Iterable"],
         "skipLibCheck": true,
+        "outDir": "./src/assets/js",
+        "rootDir": "./src", 
         /* Bundler mode */
         "moduleResolution": "bundler",
         "allowImportingTsExtensions": true,
@@ -14,9 +16,9 @@
         /* Linting */
         "strict": true,
         "noUnusedLocals": false,
-        "noUnusedParameters": true,
+        "noUnusedParameters": false,
         "noFallthroughCasesInSwitch": true
     },
-    "exclude": ["node_modules", "public"],
+    "exclude": ["node_modules", "public", "dist", "src/**/*.js"],
     "include": ["src/**/*.ts"]
 }

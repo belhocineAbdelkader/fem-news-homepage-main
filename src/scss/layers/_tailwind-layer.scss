@@ -1,5 +1,0 @@
-@use "sass:meta";
-
-@layer tailwind {
-    @include meta.load-css("../tailwind/_tailwind-layer.scss");
-}

@@ -28,7 +28,7 @@
         @include createVars($outline, "outline-");
 
         /* anchor */
-        @include createVars($link, "link");
+        @include createVars($link, "link-");
 
         /* border-radius */
         @include createVars($border-radius, "border-radius-");
@@ -42,23 +42,18 @@
         /* site-nav */
         @include createVars($main-nav, "main-nav-");
 
-        /* site-footer */
-        @include createVars($site-footer, "site-footer-");
+        /* card */
+        @include createVars($side, "side-");
 
         /* card */
         @include createVars($card, "card-");
 
-        /* form */
-        @include createVars($form, "form-");
 
         /* scrollbar */
         @include createVars($scrollbar, "scrollbar-");
 
         /* container-width */
         @include createVars($container-width, "container-width-");
-
-        /* transition */
-        @include createVars($transition, "transition-");
     }
 }
 

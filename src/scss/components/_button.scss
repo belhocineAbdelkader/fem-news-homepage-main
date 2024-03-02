@@ -8,315 +8,53 @@
         appearance: none;
         background: none;
         border: none;
+        cursor: pointer;
     }
 
     .btn {
-        --btn-bg: var(--btn-primary-default);
-        --btn-bg-hover: var(--btn-primary-hover);
-        --btn-bg-active: var(--btn-primary-active);
-        --btn-border-color: var(--btn-primary-default);
-        --btn-focus-effect: var(--focus-effect);
-        --btn-height: var(--form-elem-height, 2rem);
-        --btn-color: var(--background-primary);
-        --btn-font: var(--type-emphasis-m);
-        --btn-padding: 0.5rem;
-        --btn-radius: var(--main-radius, 0.25rem);
         border-radius: var(--btn-radius);
         cursor: pointer;
         display: inline-block;
-        padding-inline: var(--btn-padding, 0.5rem);
         text-align: center;
         text-decoration: none;
         color: inherit;
-        box-shadow:
-            inset 2px 2px 3px rgba(255, 255, 255, 0.6),
-            inset -2px -2px 3px rgba(0, 0, 0, 0.6);
-    }
 
-    /* span inside the btn that will hold icon or icon and text */
-    .btn-wrap {
-        align-items: center;
-        background-color: var(--btn-bg);
-        border: 1px solid var(--btn-border-color);
-        border-radius: var(--btn-radius);
-        color: var(--btn-color);
-        display: flex;
-        font: var(--btn-font);
-        gap: 0.25rem;
-        height: var(--btn-height);
-        justify-content: center;
-        padding-left: var(--btn-padding);
-        padding-right: var(--btn-padding);
-        position: relative;
-    }
+        /* span inside the btn that will hold icon or icon and text */
+        .btn-wrap {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: transparent;
+            position: relative;
+        }
 
-    .btn .icon {
-        background-color: var(--btn-color);
-        margin: 0 -1px; // shrinks icon-only buttons to square.
+        &.btn-primary {
+            background-color: var(--btn-clr-primary-bg);
+            color: var(--btn-clr-text);
+            padding: .5rem 1rem;
+            text-transform: uppercase;
+            letter-spacing: .3rem;
+            font-size: large;
+            font-weight: 600;
+            &:hover{
+                background-color: var(--btn-clr-primary-bg-hover);
+            }
+        }
     }
 
     /* Button States */
 
     .btn:hover,
     .btn.hover {
-        // In most cases, we want the border to be the same color as the background.
-        --btn-border-color: var(--btn-bg-hover, var(--btn-bg));
-
         .btn-wrap {
             background-color: var(--btn-bg-hover, var(--btn-bg));
         }
     }
 
-    .btn:active,
-    .btn.active {
-        .btn-wrap {
-            background-color: var(--btn-bg-active, var(--btn-bg));
-        }
-    }
-
-    .btn:focus,
-    .btn.focus {
+    .btn:focus{
         .btn-wrap {
             border: 1px solid var(--btn-secondary-border-focus);
             box-shadow: var(--btn-focus-effect);
-        }
-    }
-
-    .btn.btn[disabled],
-    .btn.btn.inactive {
-        cursor: default;
-        opacity: 0.65;
-
-        &:hover {
-            --btn-bg-hover: unset;
-        }
-
-        &:active {
-            --btn-bg-active: unset;
-        }
-    }
-
-    /* Standard Button Modifiers */
-
-    .btn.small,
-    .btn.small .btn-wrap {
-        --btn-height: 1.75rem;
-        --btn-padding: 0.25rem;
-    }
-
-    /* Secondary Version */
-
-    .btn.secondary {
-        --btn-bg: var(--btn-secondary-default);
-        --btn-border-color: var(--border-primary);
-        --btn-color: var(--text-secondary);
-        --btn-bg-hover: var(--btn-secondary-hover);
-        --btn-bg-active: var(--btn-secondary-active);
-
-        &:focus {
-            --btn-border-color: var(--btn-secondary-border-focus);
-        }
-    }
-
-    /* Action Version */
-
-    .btn.action {
-        --btn-bg: transparent;
-        --btn-border-color: var(--btn-bg);
-        --btn-color: var(--text-secondary);
-        --btn-font: var(--type-label-s);
-        --btn-bg-hover: var(--btn-secondary-hover);
-        --btn-bg-active: var(--btn-secondary-active);
-
-        &.has-icon {
-            --btn-font: var(--type-emphasis-m);
-            text-transform: initial;
-        }
-
-        &:focus {
-            --btn-border-color: var(--btn-secondary-border-focus);
-        }
-
-        .btn-wrap {
-            text-transform: var(--btn-action-transform, uppercase);
-        }
-
-        &.highlight {
-            --btn-color: var(--btn-primary-default);
-        }
-    }
-
-    /* Select Version */
-    .btn.select {
-        --btn-bg: var(--btn-secondary-default);
-        --btn-bg-hover: var(--btn-secondary-hover);
-        --btn-bg-active: var(--btn-secondary-active);
-        --btn-border-color: var(--border-primary);
-        --btn-color: var(--text-secondary);
-        appearance: none;
-        background: none;
-        border: none;
-        padding: 0;
-        text-decoration: none;
-
-        .btn-wrap {
-            box-shadow: var(--shadow-01);
-            padding-right: 26px;
-            position: relative;
-        }
-
-        .btn-wrap::after {
-            background-color: var(--icon-primary);
-            content: "";
-            display: block;
-            height: 16px;
-            mask-image: url("../../../assets/icons/small-arrow.svg");
-            mask-size: cover;
-            position: absolute;
-            right: 0.5rem;
-            top: calc(50% - 0.5rem);
-            width: 16px;
-        }
-    }
-
-    .btn.link {
-        --btn-bg: none;
-        --btn-bg-hover: none;
-        --btn-bg-active: none;
-        --btn-border-color: none;
-        --btn-focus-effect: none;
-        --btn-secondary-border-focus: none;
-        --btn-height: auto;
-        --btn-font: unset;
-        --btn-padding: 0;
-        --btn-radius: 0;
-
-        --btn-color: var(--text-link);
-        appearance: none;
-        display: inline;
-        text-decoration: none;
-
-        &:focus-visible {
-            outline-color: var(--accent-primary);
-            outline-offset: 1px;
-            outline-style: auto;
-        }
-    }
-
-    /*
-.high-contrast-white {
-  .btn:focus {
-    --btn-border-color: var(--border-primary);
-    --btn-focus-effect: 0 0 0 4px var(--background-primary),
-      0 0 0 7px var(--border-primary);
-  }
-}
-
-.high-contrast-black {
-  .btn:focus {
-    --btn-border-color: var(--border-primary);
-    --btn-focus-shadow: 0 0 0 4px var(--background-primary),
-      0 0 0 7px var(--border-primary);
-  }
-
-  .btn {
-    --btn-color: var(--btn-secondary-default);
-  }
-
-  .btn.secondary {
-    --btn-border-color: var(--btn-color);
-  }
-
-  .btn.action {
-    --btn-color: var(--text-secondary);
-  }
-}
-*/
-
-    @scope (.btn) {
-        button,
-        ::scope {
-            appearance: none;
-            background: none;
-            border: none;
-        }
-        ::scope {
-            --btn-bg: var(--btn-primary-default);
-            --btn-bg-hover: var(--btn-primary-hover);
-            --btn-bg-active: var(--btn-primary-active);
-            --btn-border-color: var(--btn-primary-default);
-            --btn-focus-effect: var(--focus-effect);
-            --btn-height: var(--form-elem-height, 2rem);
-            --btn-color: var(--background-primary);
-            --btn-font: var(--type-emphasis-m);
-            --btn-padding: 0.5rem;
-            --btn-radius: var(--main-radius, 0.25rem);
-            border-radius: var(--btn-radius);
-            cursor: pointer;
-            display: inline-block;
-            padding: 0;
-            text-decoration: none;
-        }
-        /* span inside the btn that will hold icon or icon and text */
-        .btn-wrap {
-            align-items: center;
-            background-color: var(--btn-bg);
-            border: 1px solid var(--btn-border-color);
-            border-radius: var(--btn-radius);
-            color: var(--btn-color);
-            display: flex;
-            font: var(--btn-font);
-            gap: 0.25rem;
-            height: var(--btn-height);
-            justify-content: center;
-            padding-left: var(--btn-padding);
-            padding-right: var(--btn-padding);
-            position: relative;
-        }
-        ::scope .icon {
-            background-color: var(--btn-color);
-            margin: 0 -1px; // shrinks icon-only buttons to square.
-        }
-
-        /* Button States */
-
-        ::scope:hover,
-        ::scope.hover {
-            // In most cases, we want the border to be the same color as the background.
-            --btn-border-color: var(--btn-bg-hover, var(--btn-bg));
-
-            .btn-wrap {
-                background-color: var(--btn-bg-hover, var(--btn-bg));
-            }
-        }
-
-        ::scope:active,
-        ::scope.active {
-            .btn-wrap {
-                background-color: var(--btn-bg-active, var(--btn-bg));
-            }
-        }
-
-        ::scope:focus,
-        ::scope.focus {
-            .btn-wrap {
-                border: 1px solid var(--btn-secondary-border-focus);
-                box-shadow: var(--btn-focus-effect);
-            }
-        }
-
-        .btn.btn[disabled],
-        .btn.btn.inactive {
-            cursor: default;
-            opacity: 0.65;
-
-            &:hover {
-                --btn-bg-hover: unset;
-            }
-
-            &:active {
-                --btn-bg-active: unset;
-            }
         }
     }
 }

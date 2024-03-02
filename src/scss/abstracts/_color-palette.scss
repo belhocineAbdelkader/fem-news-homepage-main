@@ -8,127 +8,38 @@
 
 // Display-p3 palette
 
-$palettes-p3: (
+$palettes-type2: (
     neutral: (
-        "white": color(display-p3 1 1 1),
-        // Convert #ffffff to Display-P3
-        "black": color(display-p3 0 0 0)
-            // Convert #000000 to Display-P3,,,,,,,,,,,,,,,,,,,
+        "white": hsl(0, 0%, 100%),
+        "black": hsl(0, 0%, 0%),
+        "off-white": hsl(36, 100%, 99%)
     ),
-    gray: (
-        "01": color(display-p3 0.9 0.9 0.9),
-        // Convert #e6e6e6 to Display-P3
-        "02": color(display-p3 0.8 0.8 0.8),
-        // Convert #cccccc to Display-P3
-        "03": color(display-p3 0.7 0.7 0.7),
-        // Convert #b3b3b3 to Display-P3
-        "04": color(display-p3 0.6 0.6 0.6),
-        // Convert #999999 to Display-P3
-        "05": color(display-p3 0.5 0.5 0.5),
-        // Convert #808080 to Display-P3
-        "06": color(display-p3 0.4 0.4 0.4),
-        // Convert #666666 to Display-P3
-        "07": color(display-p3 0.3 0.3 0.3),
-        // Convert #4d4d4d to Display-P3
-        "08": color(display-p3 0.2 0.2 0.2),
-        // Convert #333333 to Display-P3
-        "09": color(display-p3 0.1 0.1 0.1),
-        // Convert #1a1a1a to Display-P3
-        "10": color(display-p3 0.05 0.05 0.05)
-            // Convert #0d0d0d to Display-P3,,,,,,,,,,,,,,,,,,,
-    ),
+
     primary: (
-        // Hex Code: rgb(23, 78, 181)
-        300: color(display-p3 0.15415, 0.30141, 0.68462),
-        //Hex Code: #0f3170
-        400: color(display-p3 0.1 0.6 0.7),
-        //Hex Code: #8936e2
-        500: color(display-p3 0.05 0.3 0.4),
-    ),
-
-    secondary: (
-        // Hex Code: #3572e3
-        300: color(display-p3 0.5 0.7 0.9),
-        // Hex Code: #6319b3
-        400: color(display-p3 0.3 0.4 0.7),
-        // Hex Code: #3e1070
-        500: color(display-p3 0.24 0.16 0.44),
-    ),
-    accent: (
-        // Hex Code: #f7a1a4
-        200: color(display-p3 0.97 0.8 0.77),
-        // Hex Code: #e6656a
-        300: color(display-p3 0.9 0.4 0.42),
-        // Hex Code: #db242a
-        400: color(display-p3 0.85 0.14 0.16),
-        // Hex Code: #9a191d
-        500: color(display-p3 0.6 0.1 0.12),
-    ),
-
-    red: (
-        base: color(display-p3 1 0 0)
-            // Using #ff0000 to Display-P3,,,,,,,,,,,,,,,,,,,
-    ),
-    green: (
-        base: color(display-p3 0 1 0)
-            // convert #00ff00 to Display-P3,,,,,,,,,,,,,,,,,,,
+        "orange": hsl(35, 77%, 62%),
+        "red": hsl(5, 85%, 63%)
     ),
     blue: (
-        base: color(display-p3 0 0 1)
-            // Convert #0000ff to Display-P3,,,,,,,,,,,,,,,,,,,
-    ),
-    yellow: (
-        base: color(display-p3 1 0.74 0)
-            // Convert #f5bc00 to Display-P3,,,,,,,,,,,,,,,,,,,
-    ),
+        "100": hsl(233, 8%, 79%),
+        "500": hsl(236, 13%, 42%),
+        "900": hsl(240, 100%, 5%)
+    )
 ) !default;
 
 $palettes-regular: (
     neutral: (
         "white": #ffffff,
-        "black": #000000 // Convert #000000 to Display-P3,,,,,,,,,,,,,,,,,,,
+        "black": #000000,
+        "off-white": #fffdfa,
     ),
-    gray: (
-        "01": #e6e6e6,
-        "02": #cccccc,
-        "03": #b3b3b3,
-        "04": #999999,
-        "05": #808080,
-        "06": #666666,
-        "07": #4d4d4d,
-        "08": #333333,
-        "09": #1a1a1a,
-        "10": #0d0d0d,
-    ),
+
     primary: (
-        300: #174eb5,
-        400: #0f3170,
-        500: #8936e2,
-    ),
-
-    secondary: (
-        300: #3572e3,
-
-        400: #6319b3,
-        500: #3e1070,
-    ),
-    accent: (
-        200: #f7a1a4,
-        300: #e6656a,
-        400: #db242a,
-        500: #9a191d,
-    ),
-
-    red: (
-        base: #ff0000,
-    ),
-    green: (
-        base: #00ff00,
+        "orange": #e9ab53,
+        "red": #f15e50
     ),
     blue: (
-        base: #0000ff,
-    ),
-    yellow: (
-        base: #f5bc00,
-    ),
+        "100": #c5c6ce,
+        "500": #5d5f79,
+        "900": #00001a
+    )
 ) !default;

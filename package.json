@@ -5,13 +5,14 @@
     "type": "module",
     "scripts": {
         "dev": "vite",
+        "watchTS": " tsc --outDir ./src/assets/js ./src/ts/main.ts --watch",
         "build": "tsc && vite build",
         "preview": "vite preview",
         "eslint": "eslint .",
         "prettier": "prettier --write .",
         "linting": "npm-run-all --parallel prettier eslint",
         "watchSass": " sass --watch src/scss/main.scss src/assets/css/style.css ",
-        "start": "npm-run-all --parallel dev watchSass "
+        "start": "npm-run-all --parallel dev watchTS watchSass"
     },
     "devDependencies": {
         "eslint": "^8.57.0",
@@ -21,6 +22,7 @@
         "prettier": "3.2.5",
         "sass": "^1.71.1",
         "stylelint-prettier": "^5.0.0",
+        "terser": "^5.28.1",
         "typescript": "^5.3.3",
         "typescript-eslint": "^7.1.0",
         "vite": "^5.1.4"
