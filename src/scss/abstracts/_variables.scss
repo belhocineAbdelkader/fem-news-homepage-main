@@ -1,8 +1,14 @@
 /// Breakpoints map
 
-$mq-list: (md, lg);
 $breakpoints: (
-    sm: 100%,
-    md: 23.438em,//375px
-    lg: 90em //1440px
+    sm: 23.438em, //375px
+    md: 48em, // 768px
+    lg: 62em, // 992px
+    xl: 90em, // 1440px
 );
+
+$container-width: (
+    sm: 100%,
+    md: 100%,
+    lg: 1024px
+)

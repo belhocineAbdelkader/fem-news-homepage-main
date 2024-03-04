@@ -3,65 +3,18 @@
 
 @layer root {
     :root {
-        @mixin createVars($map, $prefix) {
-            @each $key, $value in $map {
-                --#{$prefix}#{$key}: #{$value};
+        @each $map, $supMap in $vars {
+            @each $key, $value in $supMap {
+                $keyName: "--" + $map + "-" + $key;
+                #{$keyName}: #{$value};
             }
         }
-        /*font pur vars*/
-        @include createVars($fs, "fs-");
-        @include createVars($fw, "fw-");
-
-        /* font sizes */
-        @include createVars($font-sizes, "fs-");
-
-        /* font weights */
-        @include createVars($font-weights, "fw-");
-
-        /* Body and types */
-        @include createVars($body, "body-");
-
-        /* heading and types */
-        @include createVars($heading, "h");
-
-        /* outline */
-        @include createVars($outline, "outline-");
-
-        /* anchor */
-        @include createVars($link, "link-");
-
-        /* border-radius */
-        @include createVars($border-radius, "border-radius-");
-
-        /* btn */
-        @include createVars($btn, "btn-");
-
-        /* site-header */
-        @include createVars($site-header, "site-header-");
-
-        /* site-nav */
-        @include createVars($main-nav, "main-nav-");
-
-        /* card */
-        @include createVars($side, "side-");
-
-        /* card */
-        @include createVars($card, "card-");
-
-
-        /* scrollbar */
-        @include createVars($scrollbar, "scrollbar-");
-
-        /* container-width */
-        @include createVars($container-width, "container-width-");
+        @media (prefers-contrast: more) {
+            --fw-body: 700;
+        }
+        @media (prefers-contrast: less) {
+            --fw-body: 200;
+        }
     }
 }
 
-:root {
-    @media (prefers-contrast: more) {
-        --fw-body: 700;
-    }
-    @media (prefers-contrast: less) {
-        --fw-body: 200;
-    }
-}

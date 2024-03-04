@@ -1,5 +1,7 @@
 @use "../abstracts" as *;
 
+/* reset and global style */ 
+
 @layer General-style {
     *,
     *::before,
@@ -65,33 +67,24 @@
 
     h1,
     .h1 {
-        font: var(--h1-font);
+        font: var(--h-1-font);
     }
 
     h2,
     .h2 {
-        font: var(--h2-font);
+        font: var(--h-2-font);
     }
 
     h3,
     .h3 {
-        font: var(--h3-font);
+        font: var(--h-3-font);
     }
 
     h4,
     .h4 {
-        font: var(--h4-font);
+        font: var(--h-4-font);
     }
 
-    h5,
-    .h5 {
-        font: var(--h5-font);
-    }
-
-    h6,
-    .h6 {
-        font: var(--h6-font);
-    }
 
     /* basic style for the p element*/
 

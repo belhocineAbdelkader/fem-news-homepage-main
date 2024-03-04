@@ -1,0 +1,5 @@
+@use "sass:meta";
+
+@layer my-fonts {
+    @include meta.load-css("../fonts/fonts.scss");
+}

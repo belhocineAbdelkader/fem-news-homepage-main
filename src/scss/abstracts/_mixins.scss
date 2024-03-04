@@ -84,58 +84,6 @@
     }
 }
 
-//================= Classes mixins =================
-
-/// Generate utility classes for a given property based on a map of values.
-///
-/// @param {Map} $map - Map containing values for the property.
-/// @param {String} $property - Property for which utility classes will be generated.
-///
-/// @Note to use it on MakeClasses mixin
-
-@mixin makeClassesOnly($map, $property) {
-    @each $value in $map {
-        .#{$property}-#{$value} {
-            #{$property}: #{$value};
-        }
-    }
-}
-
-///
-/// Generate utility classes for a given property based on a map of values,
-/// with media query variations for each breakpoint in $mq-list.
-///
-/// @param {Map} $map - Map containing values for the property.
-/// @param {String} $property - Property for which utility classes will be generated.
-/// @Note to use it on MakeClasses mixin
-
-@mixin makeClassesWithMq($map, $property) {
-    @each $media in $mq-list {
-        @include mq($media) {
-            @include makeClassesOnly($map, "#{$media}-#{$property}");
-        }
-    }
-}
-
-///
-/// Generate utility classes for a given property based on a map of values.
-///
-/// @param {Map} $map - Map containing values for the property.
-/// @param {String} $property - Property for which utility classes will be generated.
-/// @param {String} $mq - Flag indicating whether to include media queries. Default is "false".
-/// @throws {error} when you don't use mq keyword if you want generate classes with media query
-
-@mixin MakeClasses($map, $property, $mq: "false") {
-    @if $mq == "mq" {
-        @include makeClassesOnly($map, $property);
-        @include makeClassesWithMq($map, $property);
-    } @else if $mq != "false" {
-        @error 'The third mast be "false" (default) to not set media query or "mq" to set media query';
-    } @else {
-        @include makeClassesOnly($map, $property);
-    }
-}
-
 //========================= Event mixins (hover, active, focus, focus-within) ==============================
 
 /// Event wrapper

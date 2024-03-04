@@ -1,0 +1,10 @@
+@font-face {
+    font-family: "Inter";
+    src: url("../fonts/Inter-VariableFont_slnt,wght.woff2") format("woff2-variations");
+    src: url("../fonts/Inter-VariableFont_slnt,wght.woff2") format("woff2") tech("variations");
+    src: url("../fonts/Inter-VariableFont_slnt,wght.woff") format("woff-variations");
+    src: url("../fonts/Inter-VariableFont_slnt,wght.woff") format("woff") tech("variations");
+    font-display: swap;
+    font-weight: 100 1000;
+    font-variation-settings: "slnt";
+}

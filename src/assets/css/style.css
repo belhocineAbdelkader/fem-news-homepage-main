@@ -1,93 +1,115 @@
-@layer my-utilities, setup , my-components, layout, pages, themes;
+@layer fonts, my-utilities, setup , my-components, layout, pages, themes;
+@layer my-fonts {
+  @font-face {
+    font-family: "Inter";
+    src: url("../fonts/Inter-VariableFont_slnt,wght.woff2") format("woff2-variations");
+    src: url("../fonts/Inter-VariableFont_slnt,wght.woff2") format("woff2") tech("variations");
+    src: url("../fonts/Inter-VariableFont_slnt,wght.woff") format("woff-variations");
+    src: url("../fonts/Inter-VariableFont_slnt,wght.woff") format("woff") tech("variations");
+    font-display: swap;
+    font-weight: 100 1000;
+    font-variation-settings: "slnt";
+  }
+}
 @layer setup {
   @layer root {
     :root {
-      /*font pur vars*/
-      --fs-400: 0.9375rem;
-      --fs-500: clamp(1.0625rem, 1.0405rem + 0.0939vi, 1.125rem);
+      --ff-sans-serif: Inter, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      --fs-400: clamp(0.9375rem, 0.9196rem + 0.0893vi, 1rem);
+      --fs-500: clamp(1.0625rem, 1.0089rem + 0.2679vi, 1.25rem);
       --fs-600: clamp(1.1875rem, 1.1215rem + 0.2817vi, 1.375rem);
       --fs-700: clamp(1.5625rem, 1.4085rem + 0.6573vi, 2rem);
       --fs-800: clamp(1.8625rem, 1.7085rem + 0.6573vi, 2.5rem);
-      --fs-900: clamp(2.8125rem, 2.3724rem + 1.8779vi, 4.0625rem);
+      --fs-900: clamp(2.7994rem, 2.5093rem + 1.4505vi, 3.8147rem);
       --fw-400: 400;
+      --fw-600: 600;
       --fw-700: 700;
       --fw-800: 800;
-      /* font sizes */
-      --fs-h1: var(--fs-900);
-      --fs-h2: var(--fs-600);
-      --fs-h3: var(--fs-500);
-      --fs-h4: var(--fs-500);
-      --fs-body: var(--fs-400);
-      /* font weights */
-      --fw-h1: var(--fw-800);
-      --fw-h2: var(--fw-700);
-      --fw-h3: var(--fw-700);
-      --fw-h4: var(--fw-400);
-      --fw-body: var(--fw-400);
-      /* Body and types */
+      --body-fw: var(--fw-400);
+      --body-fs: var(--fs-400);
       --body-line-height: 1.75;
-      --body-letter-spacing: 0.2px;
-      --body-ff: Inter, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
-      --body-font: var(--fw-body) var(--fs-body)/var(--body-line-height) var(--body-ff);
-      /* heading and types */
+      --body-letter-spacing: 0.2;
+      --body-ff: var(--ff-sans-serif);
+      --body-font: var(--body-fw) var(--body-fs)/var(--body-line-height) var(--body-ff);
+      --h-1-fs: var(--fs-900);
+      --h-2-fs: var(--fs-600);
+      --h-3-fs: var(--fs-500);
+      --h-4-fs: var(--fs-500);
+      --h-1-fw: var(--fw-800);
+      --h-2-fw: var(--fw-700);
+      --h-3-fw: var(--fw-700);
+      --h-4-fw: var(--fw-400);
       --h-line-height: 1.2;
       --h-letter-spacing: 0.031rem;
-      --h-ff: Inter, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
-      --h1-font: var(--fw-h1) var(--fs-h1)/var(--h-line-height) var(--h-ff);
-      --h2-font: var(--fw-h2) var(--fs-h2)/var(--h-line-height) var(--h-ff);
-      --h3-font: var(--fw-h3) var(--fs-h3)/var(--h-line-height) var(--h-ff);
-      --h4-font: var(--fw-h4) var(--fs-h4)/var(--h-line-height) var(--h-ff);
-      /* outline */
+      --h-ff: var(--ff-sans-serif);
+      --h-1-font: var(--h-1-fw) var(--h-1-fs)/var(--h-line-height) var(--h-ff);
+      --h-2-font: var(--h-2-fw) var(--h-2-fs)/var(--h-line-height) var(--h-ff);
+      --h-3-font: var(--h-3-fw) var(--h-3-fs)/var(--h-line-height) var(--h-ff);
+      --h-4-font: var(--h-4-fw) var(--h-4-fs)/var(--h-line-height) var(--h-ff);
+      --size-60: 0.6rem;
+      --size-80: 0.8rem;
+      --size-90: 0.9rem;
+      --size-50: 0.5rem;
+      --size-100: 1rem;
+      --size-175: 1.75rem;
+      --size-200: 2rem;
+      --size-300: 3rem;
+      --size-325: 3.25rem;
+      --size-350: 3.5rem;
+      --size-400: 4rem;
+      --size-425: 4.25rem;
+      --size-450: 4.5rem;
+      --size-475: 4.75rem;
+      --gap-main: var(--size-100, 1rem);
+      --transition-1: 0.2s;
       --outline-site-size: max(2px, 0.08em);
       --outline-site-style: solid;
-      /* anchor */
       --link-text-decoration: none;
       --link-text-decoration-hover: none;
-      /* border-radius */
-      --border-radius-main: 0;
-      /* btn */
       --btn-font: var(--body-ff);
       --btn-text-transform: uppercase;
       --btn-padding: 0.5rem 1rem;
+      --btn-letter-spacing: 0.3rem;
+      --btn-fw: var(--fw-600);
       --btn-border: 0;
-      --btn-border-radius: 0.25rem;
-      /* site-header */
-      --site-header-padding: 0 1rem;
+      --btn-border-radius: 0;
+      --btn-transition: var(--transition-1);
+      --icon-size: var(--size-100, 1rem);
+      --icon-height: var(--size-100, 1rem);
+      --icon-width: var(--size-100, 1rem);
+      --site-header-padding: 0 1;
       --site-header-margin: 0;
-      --site-header-min-height: 4rem;
-      /* site-nav */
+      --site-header-min-height: var(--size-400);
+      --main-nav-fs: var(--fs-600);
+      --main-nav-fw: 600;
       --main-nav-padding: 0 1rem;
       --main-nav-margin: 0;
-      --main-nav-gap: 1rem;
+      --main-nav-gap: var(--gap-main);
       --main-nav-link-text-decoration: none;
-      --main-nav-font-family: var(--body-ff);
-      /* card */
+      --main-nav-transition: var(--transition-1);
       --side-title-fs: var(--fs-, 2.3rem);
       --side-sub-title-fs: var(--fs-, 1.1rem);
       --side-p-fs: var(--fs-body);
-      /* card */
       --card-num-fs: 2rem;
       --card-heading-font-size: var(--h4-font);
-      /* scrollbar */
+      --card-transition: var(--transition-1);
       --scrollbar-height: 0.72rem;
-      --scrollbar-width: 0.75rem;
+      --scrollbar-width: 0.72rem;
       --scrollbar-border-radius: 1000000000rem;
-      /* container-width */
-      --container-width-sm: 100%;
-      --container-width-md: 100%;
-      --container-width-lg: 1024px;
+      --container-max-width: 100%;
+    }
+    @media (prefers-contrast: more) {
+      :root {
+        --fw-body: 700;
+      }
+    }
+    @media (prefers-contrast: less) {
+      :root {
+        --fw-body: 200;
+      }
     }
   }
-  @media (prefers-contrast: more) {
-    :root {
-      --fw-body: 700;
-    }
-  }
-  @media (prefers-contrast: less) {
-    :root {
-      --fw-body: 200;
-    }
-  }
+  /* reset and global style */
   @layer General-style {
     *,
     *::before,
@@ -147,27 +169,19 @@
     }
     h1,
     .h1 {
-      font: var(--h1-font);
+      font: var(--h-1-font);
     }
     h2,
     .h2 {
-      font: var(--h2-font);
+      font: var(--h-2-font);
     }
     h3,
     .h3 {
-      font: var(--h3-font);
+      font: var(--h-3-font);
     }
     h4,
     .h4 {
-      font: var(--h4-font);
-    }
-    h5,
-    .h5 {
-      font: var(--h5-font);
-    }
-    h6,
-    .h6 {
-      font: var(--h6-font);
+      font: var(--h-4-font);
     }
     /* basic style for the p element*/
     p {
@@ -282,7 +296,7 @@
       cursor: pointer;
     }
     .btn {
-      border-radius: var(--btn-radius);
+      border-radius: var(--btn-border-radius);
       cursor: pointer;
       display: inline-block;
       text-align: center;
@@ -300,11 +314,12 @@
     .btn.btn-primary {
       background-color: var(--btn-clr-primary-bg);
       color: var(--btn-clr-text);
-      padding: 0.5rem 1rem;
+      padding: var(--btn-padding);
       text-transform: uppercase;
-      letter-spacing: 0.3rem;
+      letter-spacing: var(--btn-letter-spacing);
       font-size: large;
-      font-weight: 600;
+      font-weight: var(--fw-600);
+      transition: background-color var(--transition-1) linear;
     }
     .btn.btn-primary:hover {
       background-color: var(--btn-clr-primary-bg-hover);
@@ -358,7 +373,7 @@
   @layer grid-system {
     @layer container {
       /*! container */
-      @media screen and (min-width: 100%) {
+      @media screen and (min-width: 23.438em) {
         .container {
           --container-padding: 0;
           max-width: 100%;
@@ -370,7 +385,7 @@
         margin-inline: auto;
         padding-inline: var(--container-padding);
       }
-      @media screen and (min-width: 90em) {
+      @media screen and (min-width: 62em) {
         .container {
           --container-padding: 0;
           max-width: 1024px;
@@ -379,9 +394,9 @@
     }
     .even-columns {
       display: grid;
-      gap: var(--grid-gap, 1rem);
+      gap: var(--grid-gap, var(--gap-main));
     }
-    @media screen and (min-width: 23.438em) {
+    @media screen and (min-width: 48em) {
       .even-columns {
         grid-auto-flow: column;
         grid-auto-columns: 1fr;
@@ -455,8 +470,10 @@
       margin-bottom: 1.7rem;
     }
     .primary-header_wrapper_content_nav ul a {
-      font-size: var(--fs-h2);
-      font-weight: 600;
+      font-size: var(--main-nav-fs);
+      font-weight: var(--main-nav-fw);
+      text-decoration-line: var(--main-nav-link-text-decoration);
+      transition: color var(--main-nav-transition) linear;
     }
     @media screen and (min-width: 768px) {
       .primary-header_wrapper_content_nav {
@@ -470,8 +487,8 @@
         display: flex;
         gap: var(--gap, 1rem);
       }
-      .primary-header_wrapper_content_nav ul li {
-        margin: 0;
+      .primary-header_wrapper_content_nav ul li:not(li:last-child) {
+        margin-bottom: 0;
       }
     }
     @media screen and (min-width: 768px) {
@@ -492,7 +509,7 @@
       display: flex;
       gap: 2rem;
     }
-    @media screen and (max-width: 992px) {
+    @media screen and (max-width: 62em) {
       main .hero-wrapper {
         display: block;
       }
@@ -501,7 +518,7 @@
       display: flex;
       gap: 1rem;
     }
-    @media screen and (max-width: 992px) {
+    @media screen and (max-width: 62em) {
       main .hero-wrapper .hero .hero-content {
         display: block;
       }
@@ -520,7 +537,7 @@
       color: var(--side-clr-text);
       padding: 1rem;
     }
-    @media screen and (max-width: 992px) {
+    @media screen and (max-width: 62em) {
       main .hero-wrapper .side-posts {
         margin-top: 1.5rem;
       }
@@ -538,6 +555,9 @@
       font-size: var(--side-sub-title-fs);
       text-wrap: nowrap;
     }
+    main .hero-wrapper .side-posts h3 a:hover {
+      color: var(--side-clr-link-hover);
+    }
     main .hero-wrapper .side-posts p {
       margin-top: 0;
       line-height: normal;
@@ -554,6 +574,13 @@
     main .cards .img-card img {
       width: 163px;
       height: 172px;
+    }
+    main .cards .card-content a {
+      color: var(--card-clr-title);
+      transition: color var(--card-transition) linear;
+    }
+    main .cards .card-content a:hover {
+      color: var(--card-clr-link-hover);
     }
     main .cards .card-description {
       width: 23ch;
@@ -647,6 +674,7 @@
       --side-clr-bg: var(--clr-blue-900);
       --side-clr-title: var(--clr-primary-orange);
       --side-clr-link: var(--clr-neutral-off-white);
+      --side-clr-link-hover: var(--clr-primary-orange);
       --side-clr-text: var(--body-clr-text);
       --side-clr-line: var(--side-clr-text);
       --card-clr-title-num: var(--clr-blue-500);
@@ -685,6 +713,7 @@
         --side-clr-bg: var(--clr-blue-900);
         --side-clr-title: var(--clr-primary-orange);
         --side-clr-link: var(--clr-neutral-off-white);
+        --side-clr-link-hover: var(--clr-primary-orange);
         --side-clr-text: var(--body-clr-text);
         --side-clr-line: var(--side-clr-text);
         --card-clr-title-num: var(--clr-blue-500);

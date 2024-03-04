@@ -41,6 +41,7 @@ $color-vars: (
         bg: var(--clr-blue-900),
         title: var(--clr-primary-orange),
         link: var(--clr-neutral-off-white),
+        link-hover: var(--clr-primary-orange),
         text: var(--body-clr-text),
         line: var(--side-clr-text)
     ),
@@ -48,7 +49,7 @@ $color-vars: (
         title-num: var(--clr-blue-500),
         title: var(--clr-blue-900),
         link-text: var(--card-clr-title),
-        link-hover: var(--link-clr-hover-secondary)
+        link-hover: var(--link-clr-hover-secondary),
     ),
     selection: (
         bg: var(--clr-primary-orange),

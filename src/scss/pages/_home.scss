@@ -10,7 +10,7 @@
       display: flex;
       gap: 2rem;
 
-      @media screen and (max-width: 992px) {
+      @include mq(lg, "max-width") {
         display: block;
       }
 
@@ -20,7 +20,7 @@
           display: flex;
           gap: 1rem;
 
-          @media screen and (max-width: 992px) {
+          @include mq(lg, "max-width") {
             display: block;
           }
         }
@@ -35,19 +35,16 @@
         .hero-content-action {
           p {
             width: max(38ch, 100%);
-            // @media screen and (max-width: 992px) {
-            //   min-width: 35ch;
-            //   width: auto;
-            // }
           }
         }
       }
 
       // said new posts
       .side-posts {
-        @media screen and (max-width: 992px) {
+        @include mq(lg, "max-width") {
           margin-top: 1.5rem;
         }
+
         min-width: 19.5rem;
         background-color: var(--side-clr-bg);
         color: var(--side-clr-text);
@@ -67,6 +64,9 @@
           color: var(--side-clr-link);
           font-size: var(--side-sub-title-fs);
           text-wrap: nowrap;
+          &:hover {
+            color: var(--side-clr-link-hover);
+          }
         }
 
         p {
@@ -88,6 +88,15 @@
         width: 163px;
         height: 172px;
       }
+
+      .card-content a {
+        color: var(--card-clr-title);
+        transition: color var(--card-transition) linear;
+        &:hover {
+          color: var(--card-clr-link-hover);
+        }
+      }
+
       .card-description {
         width: 23ch;
         margin-block: 1rem;

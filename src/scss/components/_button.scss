@@ -12,7 +12,7 @@
     }
 
     .btn {
-        border-radius: var(--btn-radius);
+        border-radius: var(--btn-border-radius);
         cursor: pointer;
         display: inline-block;
         text-align: center;
@@ -31,11 +31,12 @@
         &.btn-primary {
             background-color: var(--btn-clr-primary-bg);
             color: var(--btn-clr-text);
-            padding: .5rem 1rem;
+            padding: var(--btn-padding);
             text-transform: uppercase;
-            letter-spacing: .3rem;
+            letter-spacing: var(--btn-letter-spacing);
             font-size: large;
-            font-weight: 600;
+            font-weight: var(--fw-600);
+            transition: background-color var(--transition-1) linear;
             &:hover{
                 background-color: var(--btn-clr-primary-bg-hover);
             }

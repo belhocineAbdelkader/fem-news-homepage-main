@@ -18,9 +18,6 @@
             display: flex;
             justify-content: space-between;
             width: 100%;
-
-            .btn {
-            }
         }
 
         &_content {
@@ -65,8 +62,10 @@
                 }
 
                 a {
-                    font-size: var(--fs-h2);
-                    font-weight: 600;
+                    font-size: var(--main-nav-fs);
+                    font-weight: var(--main-nav-fw);
+                    text-decoration-line: var(--main-nav-link-text-decoration);
+                    transition: color var(--main-nav-transition) linear;
                 }
             }
 
@@ -80,8 +79,8 @@
                     display: flex;
                     gap: var(--gap, 1rem);
 
-                    & li{
-                        margin: 0;
+                    & li:not(li:last-child) {
+                        margin-bottom: 0;
                     }
                 }
             }

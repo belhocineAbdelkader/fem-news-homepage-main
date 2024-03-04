@@ -19,7 +19,10 @@ module.exports = {
     overrides: [
         {
             extends: ["plugin:@typescript-eslint/disable-type-checked"],
-            files: ["./vite.config.js"],
+            files: [
+                "./vite.config.js",
+                "scripts/convert-img.js",
+            ],
         },
     ],
     rules: {},
