@@ -12,7 +12,7 @@
         "prettier": "prettier --write .",
         "linting": "npm-run-all --parallel prettier eslint",
         "watchSass": " sass --watch src/scss/main.scss src/assets/css/style.css ",
-        "convert-img": "node convert-img.js",
+        "convert-img": "node scripts/convert-img.js",
         "start": "npm-run-all --parallel dev convert-img watchTS watchSass"
     },
     "devDependencies": {
@@ -30,6 +30,7 @@
         "vite": "^5.1.4"
     },
     "dependencies": {
+        "express": "^4.18.3",
         "imagemin": "^8.0.1",
         "imagemin-webp": "^8.0.0"
     }

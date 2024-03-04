@@ -13,7 +13,6 @@
     <meta property="og:description"
         content="Check out this solution for the Frontend Mentor News homepage challenge. Dive into the latest web development trends and explore a modern, responsive design. See how the Bright Future of Web 3.0 is showcased alongside articles on reviving retro PCs, top 10 laptops of 2022, and the growth of gaming during the pandemic." />
     <meta property="og:determiner" content="auto" />
-    <meta property="og:url" content="news-homepage-fem-solution.netlify.app" />
     <meta property="og:locale" content="en_US" />
     <meta property="og:site_name" content="Frontend Mentor" />
     <meta property="og:type" content="website" />
@@ -22,9 +21,11 @@
     <meta property="og:image:secure_url" content="https://secure.example.com/ogp.jpg" />
     <meta property="og:image:type" content="image/webp" />
     <meta property="og:image:alt" content="Hero image illustrating the Bright Future of Web 3.0" />
+
     <!-- stylesheet -->
-    <link rel="stylesheet" type="text/css" href="/src/assets/css/style.css">
     <title>News homepage solution | Frontend Mentor</title>
+    <script type="module" crossorigin src="/assets/index-5CGoOjRV.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/css/index.css">
 </head>
 
 <body class="light">
@@ -88,9 +89,9 @@
                 <section class="[ hero ]">
                     <div class="[ hero-image ]">
                         <picture>
-                            <source media="(min-width: 375px)" srcset="/src/assets/images/image-web-3-desktop.webp">
-                            <source media="(min-width: 1440px)" srcset="/src/assets/images/image-web-3-mobile.webp">
-                            <img loading="lazy" src="/src/assets/images/image-web-3-desktop.webp"
+                            <source media="(min-width: 375px)" srcset="/assets/image-web-3-desktop.webp">
+                            <source media="(min-width: 1440px)" srcset="/assets/image-web-3-mobile.webp">
+                            <img loading="lazy" width="100%" height="100%" src="/assets/image-web-3-desktop.webp"
                                 alt="Hero image illustrating the Bright Future of Web 3.0">
                         </picture>
                     </div>
@@ -145,7 +146,7 @@
                 <ol role="list" class="[ cards-list ] ">
                     <li class="[ card ]">
                         <div class="[ img-card ]">
-                            <img loading="lazy" src="./src/assets/images/image-retro-pcs.webp"
+                            <img loading="lazy" src="/assets/image-retro-pcs.webp"
                                 alt="Image illustrating the article on Reviving Retro PCs">
                         </div>
                         <div class="[ card-content ]">
@@ -162,7 +163,7 @@
                     </li>
                     <li class="[ card ]">
                         <div class="[ img-card ]">
-                            <img loading="lazy" src="./src/assets/images/image-top-laptops.webp"
+                            <img loading="lazy" src="/assets/image-top-laptops.webp"
                                 alt="Image illustrating the article on top laptops">
                         </div>
                         <div class="[ card-content ]">
@@ -177,7 +178,8 @@
                     </li>
                     <li class="[ card ]">
                         <div class="[ img-card ]">
-                            <img loading="lazy" src="./src/assets/images/image-gaming-growth.webp"
+                            <img loading="lazy"
+                                src="data:image/webp;base64,UklGRmoLAABXRUJQVlA4IF4LAADwPwCdASrIAP4APm00lkgkIqIlpjLaGLANiWdu4Di5StA6cYmwlDib/MeNeonePM77o9y9An7V/wuI+a3DCkvcsJqWM7CNP6JbynhX0K60ysBdNZuxzdfLpYAHc4MOr6RgFjFSA0dUsvGEGY48knSW1GbLEq/lCZj8Wcm3TApOGVCX/5OKtdze8eLW7r1td0z5J6oGUuoD2n2Hfo+jKm1x288r7Ylyq7edLdiFuBG+tgdBKK0c56GygtSYcJ3B2gAdXlYYIi6OfII02otVJIH1+Gh8tUEnq6snwefwnFbrOrN9sKNINBN1LxRNh0vOIY8IirkQH5h1bRHeLCVvslemmen8NtAp0+FF6QDD3qtFLy6A65kFDmWW9jQjkuV44YfY7c1VIdqYQaETYgSuYBT+Lu8jFO7rUfGO80jUG3mHA83kzJvXBTeGXbWUNYkElKI5rPWisR+oj7ao8WuvD+L+xvyXbwxO5XI7gO3N45ST1clJzhtyKqaOin/8XknOKpvEqd0dl1x1q2m71vOFkkHEuFz76A2BKopefdH/T81ln9tBL5Wj1TSv4Ygo39hjkwl4KYfcmph5KUGvpBgrw4kXbWwMIzadB3i+86LYyLl9Vw5WmGnPZSpuv2fM1rwCZDBS+itH/w7zxUnl+AGW6Fqx8nxZR4xOAdx8D8BmPgQvXAD1EL1PyhPwAP7ScYAqNOhQPITphoFaAi6sBQG/STlmiDXPj4l/Y1EszR5pPuvKvArpwuUsMVz+9P8WFtaCg8YZO6wzuyYT9XQnJNykkefmYieODUidyiFflgauuaC4HUV/8fo9wjcAolTE1CfJoPcNbUaeDua41UxNgIvXRMg5DAH6I2WciFKfgOlVmTDz3u+IY1s996eKrqG6Y4zPiAWbcQvknYQjklVnOh/0FOQafeu+mSNdnMMBqDcFl+tX8ATNWKVTN/EW4O1ky/f9eZ+2xwhhmE8j49dhefVyIB4LIadujQN/pvo1lfoJ7MlWgdNbqLMo272yrtzeFu2EsAilgv2INelHufNODvfeF1TzA1jf8xaNsC3MJOtsMcKbCxN6eluDWxKzXxsFZtfVnfYCrF9M34ZQe0z795NGuYQx29gApg/xrZEP4VWGJuiw/C0i3z78JYWTpYJQ/Bc7OfY2XNtGKM8m5XNAYMIz9X2Xme7hWa819zW/f0QLBMAP3M0Hi8x3MqtnycY9zYvjFoD7u39X6mtvwiK/S/PQZWt6403ftnYJbb8zLusPe4StF2smRvake6ct2a8u8IdidDtTG3yFpxvOptdkwkjZMHuY4DZ57TmZjV3aJzsi3BJRH3fr6dnJry6J+Fae5NIZApC0RQvmb5wHYsgsZHZJNj7NgrxS3gsoTzUtUrbKHJJYPQMORxl4HIBHVII+S144jSJhfrTruCwzpqNPBIaKojfXKS7wM3l06FIcrLG4+/kBAJW1Zavnu4dbbdGI/MG5IinDm4evU6EXEa+KCdL3MfmgH8sl3rJCwCdeih5zmzYSX8ALh+s189qTuAPx6ZT6mqFYDOXT3c4J1TaD6r2npJFcC8sdRk/Y8aKeGPpozKRyR6llF6P3vPugVMKp9USEBlONxpJjThxGY7VsBKq/6KYeh2SPPnHkYJEeapNQ2zsvNiIIju+2tN5YHAm3PeltZ2FsjLfD2bC0qcwBdd06FuRMtsm++eZt2Yrfv11KtFBCaCB39kj/ockDFBAk/uevoX44VPgursn65GCXVFVC0UThWPHzSbzSnIwUHMoeGnNGcvQ74xFQ4FzOkxF/2g033ZfFee7uxenFfO+96YXjpQP4HS3gILGLK6wWIB9K+x0xYsQAOZMdLs+qPBBb9XwmERO3fldDqo3tKtYtcD3/4FIY7oQUBJ+37a6GCb1O/AJLqGyHC5YF/GI1AwV272g4CNw61yisNJ3poLLd1gJOiPvnU7HYvJ55+NtIe6P5Qw/lXKmt56wh9863DsOqi2JaPItI8/bXNq7bZ5MctKClbr5WtPrlDsGosUw63RmRVfRsz2DC88vsRGPWT41gw40kfyFlRvuGyCUE16jyvmU+bJUItA9a7VpMT34OOs5qURwZ/Sb7im0+psrBNLIiFNmY1D1Wtd17BXFNxRG4rlbyZ3IlvIGmzCi3+EBRhEv6ma6d5+LTU7wsCnw9biPquhtA5FWZNgC7JzXQjKhY3VbaDrnwjfvdjNSRSlFW73hzLgYq9jgArxUqtx5clPoEQaxhufzuco1yUoVrccHpIZJczEjD8d1Jc41D9gTWIa1Ipx2kgS0HQUK4bRw9lRhlapD79XWOqFhEC3ZyHC0iG/jgsBiFuqee4YvaBMP7z/5r1YhmdYrwX0ZX38aJLeTdZU1cwRIJElwj0cW/2hGwFEGx7BqGM3tf8CAI5DQ3Ubi4d09Ex8qQX96LzKl2KX1jagXgtrJfpYNpzLgjWPOW2Wk5UgxZSaAsCKvxJ1KCinyjxLqFc4kZ/iCWMGzo/Luf0xsALt9hFM8Gg6eaPGjtAjLC17zTvuNEfFiYlj1WHOJA8lb7+nZmB5uea67C4r2+hv+96AynIXTKNRIISVCLLrWWEufL8MsU90c7irs1oLqnORjrMqYVJJ0qu3+rYEF4aX/emBg+plJJPyn8346ieg1v23GSftW285qZRLf9B6LB4uKh0WA3Xs5nKNm/XkfjoLtF8TwHbInDCej5YLDw/MCMhB/07H3Xm5DNcEd3KdR25SdNgbZe7fcQqGyw8z6u4HXoJ3j2piWTRXTGwKZXuof13rcc3ebhrVutWOGP+An7jjsi7mKHggS1PrUgOBB8MxWSlDHOSoozQKKplsjjAD1c7PZRw56tvIOxDfrBATyds5nQVRFT//eMkSQf9X8HXlFZudaFk8P4Hp/nHmka+txcGZ8ex/zOXgdLSDmL2fL7o1OfUnUdZY683N8PyJOIpa6OuLyfCK+lhWE0Tkqxu3lGGT1+V7ugPEniHaMWiICQJ7INfV5CFIIEv7GBDQZj73YkIsbFhvsyn2/NwrOEw9Eih/nekAQ/R3b/6SrdjyclugN21eVXeFIUCBD733cBglPCWJptMs1HRy+UOJ6HGzsoK8GH8IYCjj4wgsOpgoIOHAOf/fi7IWOEYoVHPJqisbRh8o8ntnlpM40dNO/Y8tRbtg80h8A8jgr/aQzj9Wf1EkSY5RqndfGSwNnn49EC2JqopmHchuut4yftdsSxcs80cFp0ZAlmI3OER9aQjSp7bgcPKAD8IL1YvBZaMGeFMviLSOUBudRWILpnjWFky0i5RVaQ7aEMpqR+M/IHZwfD4b8aUc4eC12WEMYGnLYatiJTYh82Prn1APCFvrAAnlA1902v5AIN6JxfLo9k+pHAtgtc4t7M8eO9HYilvuK2a76PnQEe/1hhQvcwAMfL4KNmk7T9jx+pbhATsCKcjWx8nGYe6i++Re7J2oe58ShZ4uCHVPIGIDRsDWLoMNdRl8XLU1qpvu8uZ2odPxjHbqDMMu6q7HcMCFFCaxxtNDsBMFyQthKaJrl4JWSTfW0eVYLsm+q4AbFFYULqWT886AsYzA2hxrN4/yOBeoCx1bBmhSoEQ5PylEwWsm6ROeVbawmNyE1pXa9ogPegc9t9rL3PeHaB+x4ADq/y6iTvYjaLWdsGsUeSv7JNiRe0IdLaiG5ItAOUqE82aMov/4EbRJ5MMbAOdRhfh8gF+Ig/42eIbIdKFM9mnyBV4pa1fPG3T99SJp0cQXL//32XBLzr3iFIBVm/8uXwz0J+PPYXF1unm9/vGTIRj+1v9D3cPGkYXTZC30xizIgRE3yqp+/hwMkUhTYkpGUSxb7EgQY3fFoFVe+rCqL5qnL94FsAMgFepH5eT4aAYlpJlcEF/xVVRGfNAAA="
                                 alt="Image illustrating the article on gaming growth">
                         </div>
                         <div class="[ card-content ]">
@@ -195,7 +197,6 @@
         </main>
     </div>
 
-    <script type="module" src="/src/assets/js/main.js"></script>
     <script type="module" src="/src/app.cjs"></script>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-EXSHWQHR6W"></script>
@@ -206,6 +207,7 @@
 
         gtag('config', 'G-EXSHWQHR6W');
     </script>
+
 </body>
 
 </html>

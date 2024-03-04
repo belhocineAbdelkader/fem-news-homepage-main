@@ -22,6 +22,7 @@ module.exports = {
             files: [
                 "./vite.config.js",
                 "scripts/convert-img.js",
+                "/dist"
             ],
         },
     ],
